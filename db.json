@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Si"
+    },
+    {
+      "id": 2,
+      "name": "Hu"
+    },
+    {
+      "id": 3,
+      "name": "Ha"
+    },
+    {
+      "id": 4,
+      "name": "Ng"
+    },
+    {
+      "id": 6,
+      "name": "Mi"
+    },
+    {
+      "id": 7,
+      "name": "Du"
+    },
+    {
+      "name": "Hưng",
+      "id": "8"
+    },
+    {
+      "id": "9",
+      "name": "abcef"
+    },
+    {
+      "id": "11",
+      "name": "abcef"
+    },
+    {
+      "id": "12",
+      "name": "abcef"
+    },
+    {
+      "id": "13",
+      "name": "abcef"
+    },
+    {
+      "id": "14",
+      "name": "abcef"
+    },
+    {
+      "id": "15",
+      "name": "abcef"
+    },
+    {
+      "name": "HÆ°ng",
+      "id": "16"
+    },
+    {
+      "name": "Hưng",
+      "id": "17"
+    }
+  ],
+  
+  "foods": [
+	{
+		"id": 1,
+		"name": "Bánh tráng",
+		"price": 25.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Bánh bèo",
+		"price": 30.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Bánh bao",
+		"price": 25.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Xoài lắc",
+		"price": 30.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Kem chuối",
+		"price": 25.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Chè bà ba",
+		"price": 30.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Hột vịt lộn",
+		"price": 25.89,
+		"imgSrc": "images/p1.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Khoai lang luộc",
+		"price": 30.89,
+		"imgSrc": "images/p1.jpg"
+	}
+  ]
+}
