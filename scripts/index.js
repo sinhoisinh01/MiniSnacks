@@ -4,5 +4,9 @@ app.config(function($locationProvider,$routeProvider) {
     $routeProvider.when("/", {
         templateUrl : "view/index.html",
 		controller: "IndexController"
+    })
+	.when("/details/:foodId", {
+        templateUrl : "view/single.html",
+		controller: "IndexController"
     });
 });

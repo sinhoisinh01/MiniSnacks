@@ -10,6 +10,9 @@ RewriteRule ^about/$ ./index.html?action=about
 RewriteRule ^menu$  http://localhost/minisnacks/menu/ [R=301,L]
 RewriteRule ^menu/([A-Za-z_]+)*$ ./index.html?action=menu&id=$1
 
+# Detail
+RewriteRule ^details/[\d+]$ ./index.html?action=details&id=$1
+
 # Checkout
 RewriteRule ^checkout$ http://localhost/minisnacks/checkout/ [R=301,L]
 RewriteRule ^checkout/$ ./index.html?action=checkout

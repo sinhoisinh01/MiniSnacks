@@ -7,11 +7,11 @@
       </div>
       <div class="col-md-3" ng-repeat="food in foods| filter:searchText">
         <div class="cup-in">
-          <a href="#"><img src="{{food.imgSrc}}" class="img-responsive" alt=""></a>
+          <a href="#"><img src="{{food.imgSrc}}" class="img-thumbnail product-img" alt=""></a>
           <p>{{food.name}}</p>
-          <span class="dollar">${{food.price}}</span>
+          <span class="dollar">{{food.price | number}} VNĐ</span>
           <div class="details-in">
-            <a href="#" class="details">Details</a>
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Details</a>
           </div>
           <div class="clearfix"> </div>
         </div>
@@ -23,44 +23,11 @@
       <div class="food-header c4caf50">
         <h2>Phổ biến</h2>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3" ng-repeat="food in foods | orderBy : 'view' | limitTo: 4">
         <div class="cup-in">
-          <a href="single.html"><img src="images/p1.jpg" class="img-responsive" alt=""></a>
-          <p>Lorem ipsum dolor sit consectetur</p>
-          <span class="dollar">$25.89</span>
-          <div class="details-in">
-            <a href="#" class="details">Details</a>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="cup-in">
-          <a href="single.html"><img src="images/p1.jpg" class="img-responsive" alt=""></a>
-          <p>Lorem ipsum dolor sit consectetur</p>
-          <span class="dollar">$25.89</span>
-          <div class="details-in">
-            <a href="#" class="details">Details</a>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="cup-in">
-          <a href="single.html"><img src="images/p1.jpg" class="img-responsive" alt=""></a>
-          <p>Lorem ipsum dolor sit consectetur</p>
-          <span class="dollar">$25.89</span>
-          <div class="details-in">
-            <a href="#" class="details">Details</a>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="cup-in">
-          <a href="single.html"><img src="images/p1.jpg" class="img-responsive" alt=""></a>
-          <p>Lorem ipsum dolor sit consectetur</p>
-          <span class="dollar">$25.89</span>
+          <a href="single.html"><img src="{{food.imgSrc}}" class="img-thumbnail" alt=""></a>
+          <p>{{food.name}}</p>
+          <span class="dollar">{{food.price | number}} VNĐ</span>
           <div class="details-in">
             <a href="#" class="details">Details</a>
           </div>
