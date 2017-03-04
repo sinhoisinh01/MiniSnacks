@@ -124,6 +124,10 @@ h1,h2,h3,h4,h5,h6,.header li a,.header a,.header li label,.mega-dropdown-menu li
 .dropdown-menu{
   border:0;
 }
+.product-img{
+	width: 232px;
+	height: 238px;
+}
 @media (max-width:768px){
   .search{
     width:97%;
