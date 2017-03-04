@@ -4,4 +4,4 @@ angular.module("minisnacks")
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
 		});
-	}])
+	}]);

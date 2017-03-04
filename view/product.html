@@ -1,0 +1,20 @@
+ <div class="responsive">
+   <table class="table table-stripped table-bordered">
+     <thead>
+       <th>#</th>
+       <th>Tên sản phẩm</th>
+       <th>Giá</th>
+       <th>Hình ảnh</th>
+       <th>Tùy chọn</th>
+     </thead>
+     <tbody >
+       <tr ng-repeat="food in foods">
+         <td>{{food.id}}</td>
+         <td>{{food.name}}</td>
+         <td>{{food.price}}</td>
+         <td><img ng-src="{{food.imgSrc}}" /></td>
+         <td></td>
+       </tr>
+     </tbody>
+   </table>
+ </div>
