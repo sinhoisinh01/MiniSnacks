@@ -1,0 +1,26 @@
+RewriteEngine on
+
+RewriteBase /minisnacks
+
+# About
+RewriteRule ^about$ http://%{HTTP_HOST}/minisnacks/about/ [R=301,L]
+RewriteRule ^about/$ ./index.html?action=about
+
+# Menu
+RewriteRule ^menu$  http://%{HTTP_HOST}/minisnacks/menu/ [R=301,L]
+RewriteRule ^menu/([A-Za-z_]+)*$ ./index.html?action=menu&id=$1
+
+# Detail
+RewriteRule ^details/[\d+]$ ./index.html?action=details&id=$1
+
+# Checkout
+RewriteRule ^checkout$ http://%{HTTP_HOST}/minisnacks/checkout/ [R=301,L]
+RewriteRule ^checkout/$ ./index.html?action=checkout
+
+# Search
+RewriteRule ^search$ http://%{HTTP_HOST}/minisnacks/search/ [R=301,L]
+RewriteRule ^search/$ ./index.html?action=search
+
+# Admin
+RewriteRule ^admin$ http://%{HTTP_HOST}/minisnacks/admin/ [R=301,L]
+RewriteRule ^admin/(([A-Za-z_]+)(/[A-Za-z_0-9]+)*)*$ ./admin.html

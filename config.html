@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head id="head">
+<title>Sinh - Frontend</title>
+<meta charset="utf-8">
+<script id="OnLoad">
+	var base = window.location.origin + "/minisnacks";
+	document.head.innerHTML += "<link rel='stylesheet' href='"+base+"/css/bootstrap.min.css' type='text/css' />";
+	document.head.innerHTML += "<link rel='stylesheet' href='"+base+"/styles/my_style.css' type='text/css' />";
+	function LoadScript(url){
+		return new Promise(function(resolve,reject){
+			var script = document.createElement("script");
+	    script.type = "text/javascript";
+			script.src = url;
+	    document.getElementsByTagName("body")[0].appendChild(script);
+			setTimeout(function(){
+				resolve();
+			},100);
+		});
+}
+
+</script>
+
+</head>
+<body class="container">
+	<section class="row">
+		<div class="content">
+		</div>
+	</section>
+
+	<button class="btn btn-primary" id="btn">Add Sample</button>
+	<button class="btn btn-primary" id="btnDel">Delete Sample</button>
+	<script id="AfterLoad">
+		LoadScript(base+"/js/jquery-3.1.1.min.js").then(function(){
+			LoadScript(base+"/js/bootstrap.min.js");
+			LoadScript(base+"/scripts/index.js");
+			$("#OnLoad").remove();
+			$("#AfterLoad").remove();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+.header-bottom{
+  background:#cb4324;
+}
+.header-bottom .top-nav ul li  a:hover,.header-bottom .top-nav ul li.active a{
+  color:#ffee58;
+}
+{
+  font-family: 'Lobster Two', cursive;
+}
+h1,h2,h3,h4,h5,h6,.header li a,.header a,.header li label,.mega-dropdown-menu li.dropdown-header{
+  color:#ffffff;
+  font-family: 'Lobster Two', cursive;
+}
+.dropdown-menu.mega-dropdown-menu li li a{
+  padding:15px;
+}
+.dropdown-menu.mega-dropdown-menu li li a:hover{
+  background:#cb4324;
+}
+.header-bottom .navbar-nav>li>.dropdown-menu{
+  max-height:300px;
+  overflow-y:auto;
+}
+.browse{
+  padding:0;
+}
+.browse .vit, .browse a{
+  border-radius:0;
+  height:100px;
+}
+.browse .vit{
+  background:#D32f3f;
+}
+.cffffff{
+  background:#ffffff;
+}
+.ce8f5e9{
+  background:#e8f5e9;
+  color:#000000;
+}
+.cc8e6c9{
+  color:white;
+  background:#c8e6c9;
+}
+.cffff8d{
+  background-color:#ffff8d;
+  color:#ffffff;
+}
+.c4caf50{
+  background:#4caf50;
+  color:#ffffff;
+}
+.cffeb3b{
+  background:#ffeb3b;
+}
+.cf44336{
+  background:#f44336;
+  color:#ffffff;
+}
+.ccb4324{
+  background:#cb4324;
+  color:#ffffff;
+}
+.cup-in{
+  width:100%;
+  border-radius:0;
+  margin-right:0;
+  border:1px outset rgba(0,0,0,0.3);
+}
+.cup-in img{
+  width:100%;
+}
+.food-header{
+  padding:15px;
+  margin-bottom:15px;
+}
+.content-grid{
+  padding-bottom:0;
+}
+.header-bottom{
+  padding:0;
+}
+.header-bottom .navbar-default{
+  border:0;
+  border-radius:0;
+}
+.header-bottom .navbar-nav>li>a,.header-bottom .navbar-default a.navbar-brand{
+  color:#ffffff;
+}
+.header-bottom .navbar-nav>li>a:hover,.header-bottom .navbar-nav>li>a:active,.header-bottom .navbar-nav>li>a:visited,.header-bottom .navbar-default .navbar-nav>.open>a{
+  background:#4caf50;
+  color:#ffffff;
+}
+.header-bottom a,.header-top a{
+  border-radius:0;
+}
+.header-bottom .navbar{
+  margin-bottom:0;
+}
+.header-bottom .navbar-nav>li>.dropdown-menu{
+  margin-top:0;
+  border-radius:0;
+  background:#4caf50;
+}
+.header-bottom .navbar-nav>li>.dropdown-menu a{
+  color:white;
+}
+.search{
+  float:none;
+  width:97%;
+  margin-top:8px;
+  border-radius:0;
+}
+.pull-right{
+  float:none !important;
+}
+.navbar-default .navbar-nav>li>a{
+  width:auto;
+}
+.mns-icon{
+  top:4px;
+  margin-left:3px;
+}
+.dropdown-menu{
+  border:0;
+}
+.product-img{
+	width: 232px;
+	height: 238px;
+}
+@media (max-width:768px){
+  .search{
+    width:97%;
+  }
+}

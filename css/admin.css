@@ -1,0 +1,17 @@
+.navbar-nav>.user-menu .user-image{
+  float:none;
+  margin-left:15px;
+}
+.inner-wrapper{
+	padding:15px;
+}
+.inner-wrapper table,.inner-wrapper .table-bordered>thead>tr>th, .inner-wrapper .table-bordered>tbody>tr>th, .inner-wrapper .table-bordered>tbody>tr>td{
+	border:1px solid rgba(0,0,0,0.2);
+}
+.inner-wrapper table th{
+	background:#009688;
+	color:white;
+}
+.inner-wrapper table tr{
+	height:50px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <script id="init">
+    document.write("<base href='"+window.location.origin+"/minisnacks/' />");
+  </script>
+  <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/ionicons.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/AdminLTE.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/skin-red-light.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='plugins/iCheck/flat/green.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='plugins/datepicker/datepicker3.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='plugins/daterangepicker/daterangepicker.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/admin.css' type='text/css' media='all' />
+</head>
+<body class="hold-transition skin-red-light sidebar-mini fixed" ng-app="minisnacks-admin">
+  <div class="wrapper">
+
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>M</b>NS</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>M</b>ini<b>S</b>nacks</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="hidden-xs">Xin chào, Alexander Pierce</span>
+                <img src="images/user.jpg" class="user-image" alt="User Image">
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="images/user.jpg" class="img-circle" alt="User Image">
+
+                  <p>
+                    Alexander Pierce - Web Developer
+                    <small>Member since Nov. 2012</small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                  <div class="row">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li class="header">Bảng điều khiển</li>
+          <li class="active treeview">
+            <a href="#">
+              <i class="fa fa-dashboard"></i> <span>Thống kê</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>Người Dùng</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+              <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+              <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-cubes"></i> <span>Sản phẩm</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="admin/product"><i class="fa fa-circle-o"></i> Xem sản phẩm</a></li>
+              <li><a href="admin/product/add"><i class="fa fa-circle-o"></i> Thêm sản phẩm</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i>
+              <span>Đơn đặt hàng</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+              <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+              <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+              <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div ng-view></div>
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 2.3.8
+      </div>
+      <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+      reserved.
+    </footer>
+
+
+  </div>
+  <!-- ./wrapper -->
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <script src="js/app.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular.route.min.js"></script>
+  <script src="scripts/admin.js"></script>
+   <script src="scripts/controller/adminFood.js" ></script>
+   <script src="scripts/controller/adminFoodDetail.js" ></script>
+</body>
+</html>
