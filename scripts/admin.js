@@ -7,5 +7,8 @@ app.config(function($locationProvider,$routeProvider) {
     }).when("/admin/product",{
       templateUrl : "view/product.html",
       controller  : "AdminFood"
+    }).when("/admin/product/:id",{
+      templateUrl : "view/product-detail.html",
+      controller :  "AdminFoodDetail"
     });
 });

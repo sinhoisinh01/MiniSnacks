@@ -1,0 +1,15 @@
+<div class="inner-wrapper">
+  <div class="page-header">
+    <h2>{{food.name}}</h2>
+  </div>
+  <p>Giá:{{food.price}}</p>
+  <p>Hình ảnh sản phẩm:</p>
+  <img src="{{food.imgSrc}}" class="img-rounded" width="250px" height="250px"/>
+  <p>Lượt Xem:{{food.view}}</p>
+  <div class="page-header">
+    <h4>Bình luận:</h4>
+  </div>
+  <p ng-repeat="comment in food.comments | limitTo: 5">
+    {{comment.author}} : {{comment.content}}
+  </p>
+</div>
