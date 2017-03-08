@@ -1,7 +1,7 @@
 angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', function($scope, $http) {
 		$scope.foods = [];
 		$scope.pages = [];
-		productPerPage = 10;
+		productPerPage = 5;
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
 			for (i = 1; i <= Math.ceil($scope.foods.length/productPerPage); i++) {
@@ -10,7 +10,7 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 		});
 
 		$scope.goToPage = function(pageNum) {
-			$http.get("http://localhost:3000/foods?_page=" + pageNum + "&_limit=10").then(function (response) {
+			$http.get("http://localhost:3000/foods?_page=" + pageNum + "&_limit=5").then(function (response) {
 				$scope.foods = response.data;
 			});
 		};

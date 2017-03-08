@@ -5,22 +5,32 @@
        <th style="width: 100px">#</th>
        <th>Tên sản phẩm</th>
        <th>Giá</th>
-
+       <th style="width: 200px;">Hình ảnh</th>
        <th>Số lượng</th>
      </thead>
      <tbody >
-       <tr ng-repeat="food in foods | limitTo: 10">
+       <tr ng-repeat="food in foods | limitTo: 5">
          <td>{{$index+1}} <br>
+           <button type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-pencil"> Sửa</span>
+            </button>
+           <button type="button" class="btn btn-default btn-sm" ng-click="remove(food.id)">
+              <span class="glyphicon glyphicon-trash"> Xóa</span>
+            </button>
           </td>
+<<<<<<< HEAD
 
          <td>
          <a type="button" class="btn-link" data-toggle="modal" data-target="#myModal" ng-click="get(food.id)"><span class="glyphicon glyphicon-pencil"></span></a> 
          <a href="" class="btn-link" ng-click="remove(food.id)"><span class="glyphicon glyphicon-trash"></span></a>
          &boxV;<a href="/minisnacks/admin/product/{{food.id}}" class="btn-link">{{food.name}}</a>
          
+=======
+         <td>{{food.name}}
+>>>>>>> 72d0b36b0e380e01a2ee07bbef88ac31d3233ff6
          </td>
          <td>{{food.price}}</td>
-
+         <td><img ng-src="{{food.imgSrc}}" height="150px" width="150px" /></td>
          <td></td>
        </tr>
      </tbody>
@@ -32,6 +42,7 @@
    </center>
  </div>
 </div>
+<<<<<<< HEAD
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -79,3 +90,5 @@
 
   </div>
 </div>
+=======
+>>>>>>> 72d0b36b0e380e01a2ee07bbef88ac31d3233ff6
