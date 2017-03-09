@@ -23,4 +23,25 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 			}
 			$http.delete("http://localhost:3000/foods/" + id).then();
 		};
+
+		$scope.get = function(id) {
+			$http.get("http://localhost:3000/foods/" + id).then( function(response) {
+				for(i = 0; i < $scope.foods.length; i++) {
+					if($scope.foods[i].id === id )
+					{
+						$scope.food = $scope.foods[i];
+					}
+				}
+			});
+		};
+
+		$scope.update = function(id, food) {
+			$http.put("http//localhost:3000/foods/" + id).then( function(response) {
+				
+			});
+		};
+
+		$scope.reset = function(id) {
+			
+		};
 	}]);
