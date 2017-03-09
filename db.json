@@ -61,10 +61,17 @@
       "id": "17"
     }
   ],
+  "categories": [
+	{"id": 1, "category_name": "Ăn nhẹ"},
+	{"id": 2, "category_name": "Món chính"},
+	{"id": 3, "category_name": "Ăn vặt"},
+	{"id": 4, "category_name": "Tráng miệng"}
+  ],
   "foods": [
     {
       "id": 1,
       "name": "Bánh tráng trộn",
+	  "category": {"id": 1, "category_name": "Ăn nhẹ"},
       "price": 40000,
       "imgSrc": "images/banh_trang_tron_icon.jpg",
       "thumbnail": "images/banh_trang_tron_thumbnail.jpg",
@@ -75,6 +82,7 @@
     {
       "id": 2,
       "name": "Bánh bèo",
+	  "category": {"id": 2, "category_name": "Món chính"},
       "price": 40000,
       "imgSrc": "images/banh_beo_icon.jpg",
       "thumbnail": "images/banh_beo_thumbnail.jpg",
@@ -85,6 +93,7 @@
     {
         "id": 3,
         "name": "Bánh bao",
+		"category": {"id": 2, "category_name": "Món chính"},
         "price": 15000,
         "imgSrc": "images/banh_bao_icon.jpg",
         "thumbnail": "images/banh_bao_thumbnail.jpg",
@@ -108,6 +117,7 @@
     {
       "id": 4,
       "name": "Xoài lắc",
+	  "category": {"id": 3, "category_name": "Ăn vặt"},
       "price": 20000,
       "imgSrc": "images/xoai_lac_icon.jpg",
       "thumbnail": "images/xoai_lac_thumbnail.jpg",
@@ -117,6 +127,7 @@
     {
       "id": 5,
       "name": "Kem chuối",
+	  "category": {"id": 4, "category_name": "Tráng miệng"},
       "price": 5000,
       "imgSrc": "images/kem_chuoi_icon.jpg",
       "thumbnail": "images/kem_chuoi_thumbnail.jpg",
@@ -126,6 +137,7 @@
     {
       "id": 6,
       "name": "Chè bà ba",
+	  "category": {"id": 4, "category_name": "Tráng miệng"},
       "price": 8000,
       "imgSrc": "images/che_ba_ba_icon.jpg",
       "thumbnail": "images/che_ba_ba_thumbnail.jpg",
@@ -135,6 +147,7 @@
     {
       "id": 7,
       "name": "Hột vịt lộn",
+	  "category": {"id": 3, "category_name": "Ăn vặt"},
       "price": 70000,
       "imgSrc": "images/hot_vit_lon_icon.jpg",
       "thumbnail": "images/hot_vit_lon_thumbnail.jpg",
@@ -144,6 +157,7 @@
     {
       "id": 8,
       "name": "Bánh tráng nướng",
+	  "category": {"id": 3, "category_name": "Ăn vặt"},
       "price": 15000,
       "imgSrc": "images/banh_trang_nuong_icon.jpg",
       "thumbnail": "images/banh_trang_nuong_thumbnail.jpg",
