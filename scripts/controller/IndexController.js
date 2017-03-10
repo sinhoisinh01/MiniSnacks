@@ -1,9 +1,16 @@
 angular.module("minisnacks")
 	.controller('IndexController', ['$rootScope', '$scope', '$http', '$routeParams', '$location', function($rootScope, $scope, $http, $routeParams, $location) {
 		$scope.foods = [];
+		$scope.categories=[];
 		$scope.newComment = {};
+		
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
+			$scope.dishcate = response.data;
+		});
+
+		$http.get("http://localhost:3000/categories").then(function (response) {
+			$scope.categories = response.data;
 
 		});
 
@@ -13,7 +20,25 @@ angular.module("minisnacks")
 			$http.get("http://localhost:3000/foods/" + foodId).then(function (response) {
 				$scope.dish = response.data;
 			});
-		}
+		}	
+
+		
+		categoryId = $routeParams.categoryId;
+
+		if (categoryId) {			
+
+			$http.get("http://localhost:3000/foods").then(function (response) {
+				$scope.dishcate = [];
+					for (var i = 0; i < response.data.length; i++) {
+						if(response.data[i].category.id == categoryId){
+							$scope.dishcate.push(response.data[i]);					 	
+					}					
+
+				}	
+			});
+		}	
+		
+			
 
 		$scope.AddNewComment = function() {
 			if ($scope.newComment.author && $scope.newComment.content) {
@@ -79,5 +104,5 @@ angular.module("minisnacks")
 					}
 				});
 			}
-		};
+		};		
 	}]);
