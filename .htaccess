@@ -17,6 +17,10 @@ RewriteRule ^details/[\d+]$ ./index.html?action=details&id=$1
 RewriteRule ^checkout$ http://%{HTTP_HOST}/minisnacks/checkout/ [R=301,L]
 RewriteRule ^checkout/$ ./index.html?action=checkout
 
+# Account
+RewriteRule ^account$ http://%{HTTP_HOST}/minisnacks/account/ [R=301,L]
+RewriteRule ^account/$ ./index.html?action=account
+
 # Search
 RewriteRule ^search$ http://%{HTTP_HOST}/minisnacks/search/ [R=301,L]
 RewriteRule ^search/$ ./index.html?action=search
