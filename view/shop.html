@@ -1,0 +1,26 @@
+<div class="container-fluid" ng-controller="IndexController" >
+<div class="content-grid row">
+  <div class="col-md-12 food-grid">
+    <div class="cup cffffff">
+      <div class="food-header cf44336">
+        <h2>Search By Category</h2>
+      </div>
+      <div class="col-md-3" ng-repeat="food in dishcate">
+        <div class="cup-in">
+          <a href="#"><img ng-src="{{food.imgSrc}}" class="img-responsive product-img" alt=""></a>
+          <p>{{food.name}}</p>
+          <span class="dollar">{{food.price | number}} VNĐ</span>
+          <div class="details-in">
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Details</a>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+
+   
+  </div>
+  <div class="clearfix"> </div>
+</div>
+</div>
