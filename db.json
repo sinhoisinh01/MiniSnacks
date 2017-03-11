@@ -62,16 +62,31 @@
     }
   ],
   "categories": [
-	{"id": 1, "category_name": "Ăn nhẹ"},
-	{"id": 2, "category_name": "Món chính"},
-	{"id": 3, "category_name": "Ăn vặt"},
-	{"id": 4, "category_name": "Tráng miệng"}
+    {
+      "id": 1,
+      "category_name": "Ăn nhẹ"
+    },
+    {
+      "id": 2,
+      "category_name": "Món chính"
+    },
+    {
+      "id": 3,
+      "category_name": "Ăn vặt"
+    },
+    {
+      "id": 4,
+      "category_name": "Tráng miệng"
+    }
   ],
   "foods": [
     {
       "id": 1,
       "name": "Bánh tráng trộn",
-	  "category": {"id": 1, "category_name": "Ăn nhẹ"},
+      "category": {
+        "id": 1,
+        "category_name": "Ăn nhẹ"
+      },
       "price": 40000,
       "imgSrc": "images/banh_trang_tron_icon.jpg",
       "thumbnail": "images/banh_trang_tron_thumbnail.jpg",
@@ -82,7 +97,10 @@
     {
       "id": 2,
       "name": "Bánh bèo",
-	  "category": {"id": 2, "category_name": "Món chính"},
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
       "price": 40000,
       "imgSrc": "images/banh_beo_icon.jpg",
       "thumbnail": "images/banh_beo_thumbnail.jpg",
@@ -91,33 +109,39 @@
       "view": "2"
     },
     {
-        "id": 3,
-        "name": "Bánh bao",
-		"category": {"id": 2, "category_name": "Món chính"},
-        "price": 15000,
-        "imgSrc": "images/banh_bao_icon.jpg",
-        "thumbnail": "images/banh_bao_thumbnail.jpg",
-        "description": " là một loại bánh làm bằng bột mỳ có nhân và hấp trong ẩm thực Trung Hoa. Nó giống với loại bánh màn thầu truyền thống của Trung Quốc. Nhân bánh bao được làm bằng thịt và/hoặc rau. Bánh bao thường được dùng bất cứ bữa ăn nào trong ngày trong văn hóa Trung Hoa, và thường được người Trung Quốc dùng làm món ăn bữa sáng.",
-        "comments": [
-          {
-            "author": "Sinh",
-            "content": "Test thử"
-          },
-          {
-            "author": "asdf",
-            "content": "asdf"
-          },
-          {
-            "author": "1234",
-            "content": "asdf"
-          }
-        ],
-        "view": "2"
+      "id": 3,
+      "name": "Bánh bao",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 15000,
+      "imgSrc": "images/banh_bao_icon.jpg",
+      "thumbnail": "images/banh_bao_thumbnail.jpg",
+      "description": " là một loại bánh làm bằng bột mỳ có nhân và hấp trong ẩm thực Trung Hoa. Nó giống với loại bánh màn thầu truyền thống của Trung Quốc. Nhân bánh bao được làm bằng thịt và/hoặc rau. Bánh bao thường được dùng bất cứ bữa ăn nào trong ngày trong văn hóa Trung Hoa, và thường được người Trung Quốc dùng làm món ăn bữa sáng.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Test thử"
+        },
+        {
+          "author": "asdf",
+          "content": "asdf"
+        },
+        {
+          "author": "1234",
+          "content": "asdf"
+        }
+      ],
+      "view": "2"
     },
     {
       "id": 4,
       "name": "Xoài lắc",
-	  "category": {"id": 3, "category_name": "Ăn vặt"},
+      "category": {
+        "id": 3,
+        "category_name": "Ăn vặt"
+      },
       "price": 20000,
       "imgSrc": "images/xoai_lac_icon.jpg",
       "thumbnail": "images/xoai_lac_thumbnail.jpg",
@@ -127,7 +151,10 @@
     {
       "id": 5,
       "name": "Kem chuối",
-	  "category": {"id": 4, "category_name": "Tráng miệng"},
+      "category": {
+        "id": 4,
+        "category_name": "Tráng miệng"
+      },
       "price": 5000,
       "imgSrc": "images/kem_chuoi_icon.jpg",
       "thumbnail": "images/kem_chuoi_thumbnail.jpg",
@@ -137,7 +164,10 @@
     {
       "id": 6,
       "name": "Chè bà ba",
-	  "category": {"id": 4, "category_name": "Tráng miệng"},
+      "category": {
+        "id": 4,
+        "category_name": "Tráng miệng"
+      },
       "price": 8000,
       "imgSrc": "images/che_ba_ba_icon.jpg",
       "thumbnail": "images/che_ba_ba_thumbnail.jpg",
@@ -147,7 +177,10 @@
     {
       "id": 7,
       "name": "Hột vịt lộn",
-	  "category": {"id": 3, "category_name": "Ăn vặt"},
+      "category": {
+        "id": 3,
+        "category_name": "Ăn vặt"
+      },
       "price": 70000,
       "imgSrc": "images/hot_vit_lon_icon.jpg",
       "thumbnail": "images/hot_vit_lon_thumbnail.jpg",
@@ -157,12 +190,31 @@
     {
       "id": 8,
       "name": "Bánh tráng nướng",
-	  "category": {"id": 3, "category_name": "Ăn vặt"},
+      "category": {
+        "id": 3,
+        "category_name": "Ăn vặt"
+      },
       "price": 15000,
       "imgSrc": "images/banh_trang_nuong_icon.jpg",
       "thumbnail": "images/banh_trang_nuong_thumbnail.jpg",
       "comments": [],
       "view": "10"
+    },
+    {
+      "name": "adawdaw",
+      "price": "awdawdawdaw",
+      "imgSrc": "",
+      "thumbnail": "",
+      "description": "awdawdawdwa",
+      "id": 9
+    },
+    {
+      "name": "asd",
+      "price": "70000",
+      "imgSrc": "",
+      "thumbnail": "",
+      "description": "yeah",
+      "id": 10
     }
   ]
 }
