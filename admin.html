@@ -6,7 +6,9 @@
   <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <base href="http://localhost/minisnacks/" />
+  <script id="init">
+    document.write("<base href='"+window.location.origin+"/minisnacks/' />");
+  </script>
   <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all' />
   <link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all' />
   <link rel='stylesheet' href='css/ionicons.min.css' type='text/css' media='all' />
@@ -139,10 +141,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-              <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-              <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-              <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+              <li><a href="admin/orders"><i class="fa fa-circle-o"></i> Xem Hóa Đơn</a></li>
             </ul>
           </li>
         </ul>
@@ -188,7 +187,8 @@
    <script src="scripts/controller/adminFood.js" ></script>
    <script src="scripts/controller/adminFoodDetail.js" ></script>
    <script src="scripts/controller/adminCtrl/AdminAddProductCtrl.js" ></script>
-   
+   <!--order-->
+   <script src="scripts/controller/adminOrders.js" ></script>
   </body>
 </html>
 

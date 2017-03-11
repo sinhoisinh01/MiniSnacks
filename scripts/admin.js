@@ -14,5 +14,8 @@ app.config(function($locationProvider,$routeProvider) {
       templateUrl : "view/admin/add_product.html",
       controller :  "AdminAddProductCtrl"
 	  //goi o day thi khong can khai bao controller trong trang html
+    }).when("/admin/orders",{
+      templateUrl : "view/admin/admin_orders.html",
+      controller: "AdminOrders"
     });
 });
