@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular-cookies": "^1.5.7",
     "json-server": "^0.9.5"
   },
   "devDependencies": {},

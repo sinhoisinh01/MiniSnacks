@@ -1,8 +1,9 @@
 angular.module("minisnacks")
-	.controller('IndexController', ['$rootScope', '$scope', '$http', '$routeParams', '$location', function($rootScope, $scope, $http, $routeParams, $location) {
+	.controller('IndexController', ['$rootScope', '$scope', '$http', '$routeParams', '$location','$cookies', function($rootScope, $scope, $http, $routeParams, $location, $cookies) {
 		$scope.foods = [];
 		$scope.categories=[];
 		$scope.newComment = {};
+		$rootScope.currentUser = {};
 		
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
@@ -12,6 +13,13 @@ angular.module("minisnacks")
 		$http.get("http://localhost:3000/categories").then(function (response) {
 			$scope.categories = response.data;
 
+		});
+
+		currentUserId = $cookies.get('currentUserId');
+		$http.get("http://localhost:3000/users/" + currentUserId)
+		.then(function(response) {
+			$rootScope.currentUser = response.data;
+			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
 		});
 
 		foodId = $routeParams.foodId;
@@ -80,7 +88,7 @@ angular.module("minisnacks")
 					$http(req).then( function(response) {
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
-						window.location.href = "http://localhost/minisnacks/";
+						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
 					});
 				});
 			}
@@ -96,7 +104,7 @@ angular.module("minisnacks")
 						if (response.data[i].email == $scope.email && response.data[i].password == $scope.password) {
 							$rootScope.currentUser = response.data[i];
 							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
-							window.location.href = "http://localhost/minisnacks/";
+							$cookies.put('currentUserId', $rootScope.currentUser.id);
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -104,5 +112,53 @@ angular.module("minisnacks")
 					}
 				});
 			}
-		};		
+		};
+
+		$scope.AddToCart = function() {
+			if (foodId) {
+				flat = 1;
+				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
+					if ($rootScope.currentUser.cart.items[i].id == foodId) {
+						$rootScope.currentUser.cart.items[i].quantity++;
+						flat = 0;
+						req = {
+						 "method":"PUT",
+						 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+						 "headers": {
+						   "Content-Type": "application/json"
+						 },
+						 "data":$rootScope.currentUser
+						};
+						$http(req).then(function() {});
+						break;
+					}
+				}
+				if (flat == 1) {
+					$scope.dish.quantity = 1;
+					$rootScope.currentUser.cart.items.push($scope.dish);
+					req = {
+					 "method":"PUT",
+					 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+					 "headers": {
+					   "Content-Type": "application/json"
+					 },
+					 "data":$rootScope.currentUser
+					};
+					$http(req).then(function() {});
+				}
+				console.log($rootScope.currentUser.cart);
+			}	
+		}
+
+		$scope.updateCart = function() {
+			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+		}
+
+		function calculateTotal(items) {
+			total = 0;
+			for (var i = 0; i < items.length; i++) {
+				total += items[i].price * items[i].quantity;
+			}
+			return total;
+		}	
 	}]);

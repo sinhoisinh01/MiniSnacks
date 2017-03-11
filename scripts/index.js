@@ -1,4 +1,4 @@
-var app = angular.module("minisnacks", ["ngRoute"]);
+var app = angular.module("minisnacks", ["ngRoute", "ngCookies"]);
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) { 
  	$locationProvider.html5Mode(true);
@@ -18,6 +18,11 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
     .when("/shop", {
         templateUrl : "view/shop.html",
       	controller: "IndexController"
+    })
+
+    .when("/cart", {
+        templateUrl : "view/cart.html",
+        controller: "IndexController"
     })
 
 	.when("/details/:foodId", {

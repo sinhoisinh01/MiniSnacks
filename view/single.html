@@ -2,9 +2,12 @@
 	<div class="single">
 		<div class="col-md-9  single-top">
 			<div class="text-in">					
-					<div class="single-men">
+					<div class="single-men" style="width:100%">
 						<img class="img-responsive" src="{{dish.thumbnail}}" alt="" />
-						<h5>{{dish.name}}</h5>
+						<div class="" style="position:relative">
+							<h5 class="pull-left">{{dish.name}}</h5>
+							<button class="btn btn-warning pull-right" ng-click="AddToCart()"><span class="glyphicon glyphicon-shopping-car"></span>Thêm vào giỏ hàng</button>
+						</div>		
 						<p>{{dish.description}}</p>
 					</div>
 					  <ul class="comment-list" ng-if="dish.comments.length == 0">
