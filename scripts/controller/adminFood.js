@@ -49,8 +49,5 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 				console.log(response);	
 			});
 		};
-
-		$scope.reset = function(id) {
-			
-		};
+		
 	}]);

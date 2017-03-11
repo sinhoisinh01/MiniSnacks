@@ -10,5 +10,8 @@ app.config(function($locationProvider,$routeProvider) {
     }).when("/admin/product/:id",{
       templateUrl : "view/product-detail.html",
       controller :  "AdminFoodDetail"
+    }).when("/admin/orders",{
+      templateUrl : "view/admin/admin_orders.html",
+      controller: "AdminOrders"
     });
 });
