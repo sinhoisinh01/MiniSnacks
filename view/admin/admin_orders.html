@@ -1,0 +1,31 @@
+<div class="inner-wrapper">
+	<table class="table table-bordered table-striped table-hover responsive">
+		<thead>
+			<th>#</th>
+			<th>Mã Hóa Đơn</th>
+			<th>Ngày Tạo</th>
+			<th>Ngày Chỉnh Sửa</th>
+			<th>Tình Trạng</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "order in orders | limitTo : 10">
+				<td ng-bind="$index+1"></td>
+				<td ng-bind="order.id"></td>
+				<td ng-bind="order.created_date | date:'dd/MM/yyyy'"></td>
+				<td ng-bind="order.modifed_date | date:'dd/MM/yyyy'"></td>
+				<td id="status">
+				  <select class="form-control" id="sel1" ng-model="order.status">
+			        <option>Chưa giao hàng</option>
+			        <option>Đã giao hàng</option>
+			        <option>Hủy</option>
+			      </select>
+			    </td>
+			</tr>
+		</tbody>
+	</table>
+	<center>
+     	<ul class="pagination">
+      		<li ng-repeat="p in pages"><a class="btn btn-primary" ng-click="goToPage(p)">{{p}}</a></li>
+    	</ul>
+	</center>
+</div>
