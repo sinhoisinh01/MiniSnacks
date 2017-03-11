@@ -1,9 +1,14 @@
 var app = angular.module("minisnacks", ["ngRoute"]);
-app.config(function($locationProvider,$routeProvider) {
-    $locationProvider.html5Mode(true);
+
+app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) { 
+ 	$locationProvider.html5Mode(true);
     $routeProvider.when("/", {
         templateUrl : "view/index.html",
-		      controller: "IndexController"
+	      controller: "IndexController"
+    })
+    .when("/account", {
+        templateUrl : "view/account.html",
+      	controller: "IndexController"
     })
     .when("/shop/:categoryId", {
         templateUrl : "view/shop.html",
@@ -19,4 +24,4 @@ app.config(function($locationProvider,$routeProvider) {
         templateUrl : "view/single.html",
 		      controller: "IndexController"
     });
-});
+}]);
