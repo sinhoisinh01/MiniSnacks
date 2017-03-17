@@ -1,142 +1,107 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-				<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){		
-							event.preventDefault();
-							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-						});
-					});
-					</script>
+<div class="container wrapper">
+        <div class="row cart-head">
+            <div class="container">
+                <div class="page-header">
+                  <h1 style="color:black">Thông tin hóa đơn</h1>
+                </div>
+            </div>
+        </div>    
+        <div class="row cart-body">
+            <form class="form-horizontal" method="post" action="http://localhost/minisnacks">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                <!--SHIPPING METHOD-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">Thông tin người mua</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h4>Shipping Address</h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-12">
+                                <strong>Họ:</strong>
+                                <input type="text" name="first_name" class="form-control" ng-model="newOrder.lastname" />
+                            </div>
+                            <div class="span1"></div>
+                            <div class="col-md-6 col-xs-12">
+                                <strong>Tên:</strong>
+                                <input type="text" name="last_name" class="form-control" ng-model="newOrder.firstname" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Địa chỉ:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="address" class="form-control" ng-model="newOrder.address" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="zip_code" class="form-control" ng-model="newOrder.ZipCode" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Điện thoại liên lạc:</strong></div>
+                            <div class="col-md-12"><input type="text" name="phone_number" class="form-control" ng-model="newOrder.phone" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Email:</strong></div>
+                            <div class="col-md-12"><input type="text" name="email_address" class="form-control" ng-model="newOrder.email" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Ghi chú:</strong></div>
+                            <div class="col-md-12">
+                                <textarea class="form-control" rows="5" ng-model="newOrder.note"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--SHIPPING METHOD END-->
+            </div>
 
-</head>
-<body> 
-	<!--header-->
-	<div class="header-in">
-		<div class="container">
-			<div class="logo">
-				<h1><a href="index.html">Food Shop</a></h1>
-			</div>
-			<div class="header-top">
-				<div class="header-top-in">
-					<ul class="header-grid">
-						<li ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li ><a href="login.html">  Login </a> </li>		
-					</ul>
-					<div class="act">
-						<a href="#" class="done">Donec actortor </a>
-					</div>
-				<div class="clearfix"> </div>
-				</div>
-				<ul class="grid-header">
-					<li><a href="account.html">My Account</a> <label>/</label></li>
-					<li><a href="#">My Cart</a> <label>/</label></li>
-					<li><a href="checkout.html">  Checkout </a> </li>		
-				</ul>
-				<div class="clearfix"> </div>
-			</div>
-			<!---->
-			<div class="header-bottom">
-				<div class="top-nav">
-					<span class="menu"> </span>
-					<ul>
-						<li  ><a href="index.html" >Home  </a><label>- </label> </li>
-						<li><a href="location.html" > Locations</a><label>- </label></li>
-						<li><a href="specials.html">Specials </a><label>- </label></li>
-						<li class="active1"><a href="404.html" > Order Online</a><label>- </label></li>
-						<li><a href="contact.html">Contacts</a></li>
-					</ul>
-					<!--script-->
-				<script>
-					$("span.menu").click(function(){
-						$(".top-nav ul").slideToggle(500, function(){
-						});
-					});
-			</script>
-				</div>
-					<div class="search">
-						<form>
-							<input type="text" value="Search store here ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-							<input type="submit" value="">
-						</form>
-					</div>
-			<div class="clearfix"> </div>
-		</div>
-		<!---->
-		
-		</div>
-	</div>
-	<!---->
-	<div class="container">
-		 <div class="register-account">
-    	     <h4 class="title">Shopping cart is empty</h4>
-    	     <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.html"> here</a> to continue shopping</p>
-    	   </div>
-		</div>
-
-	<!---->
-	<div class="footer">
-		<div class="container">
-		<div class="col-md-8 footer-bottom ">
-		<h4>Aenean condimentum suscipit dolor</h4>
-		<p>Proin ullamcorper urna quis velit mollis molestie suscipit nisl consectetur
-uspendisse venenatis dolor et nunc iaculis ege</p>
-		<p class="footer-grid">Copyright &copy; 2015 Food shop Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-
-		</div>
-			<div class="col-md-4 footer-bottom ">
-				<h4>Muscipit dolor</h4>
-				<ul class="social-icons">
-					<li><a href="#"><span> </span> </a></li>
-					<li class="tin"><a href="#"><span> </span></a></li>
-					<li class="linked"><a href="#"><span> </span> </a></li>
-				</ul>
-			</div>
-				<div class="clearfix"> </div>
-		</div>	
-	</div>
-	 <script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
-							$().UItoTop({ easingType: 'easeOutQuart' });
-							
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-</body>
-</html>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                <!--REVIEW ORDER-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Danh sách mua hàng <div class="pull-right"><small><a class="afix-1" href="http://localhost/minisnacks/cart">Cập nhật lại giỏ hàng</a></small></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" ng-repeat="item in currentUser.cart.items">
+                            <div class="col-sm-3 col-xs-3">
+                                <img class="img-responsive" src="{{item.imgSrc}}" width="100px" height="70px" />
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="col-xs-12" ng-bind="item.name">Sản phẩm</div>
+                                <div class="col-xs-12"><small>Số lượng:<span ng-bind="item.quantity"></span></small></div>
+                                <div class="col-xs-12"><small>Đơn giá:<span>{{item.price | number:0}} VND</span></small></div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 text-right">
+                                <h6 style="color:black">{{item.quantity * item.price | number:0}} VND</h6>
+                            </div>
+                        </div>
+                        <div class="form-group"><hr /></div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Thành tiền</strong>
+                                <div class="pull-right"><span>{{currentUser.cart.total | number:0}} VND</span></div>
+                            </div>
+                        </div>
+                        <div class="form-group"><hr /></div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Tổng hóa đơn</strong>
+                                <div class="pull-right"><span>{{currentUser.cart.total * 1.1 | number:0}} VND - Đã bao gồm VAT</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--REVIEW ORDER END-->
+            </div>
+            
+            </form>
+        </div>
+        <div class="row cart-footer" style="margin-bottom:20px">
+            <button type="submit" class="btn btn-primary btn-block" ng-click="checkout()"><h3>Thanh toán</h3></button>
+        </div>
+</div>

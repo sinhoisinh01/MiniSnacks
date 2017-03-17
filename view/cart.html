@@ -1,5 +1,8 @@
 <div class="container">
 	<div class="responsive">
+		<div class="page-header">
+		  <h1 style="color:black">Giỏ hàng</h1>
+		</div>
 		<table class="table table-bordered table-stripped" style="background:white">
 			<thead>
 				<tr>
@@ -13,7 +16,7 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="item in currentUser.cart.items">
-					<td class="col-sm-1">{{$index}}</td>
+					<td class="col-sm-1">{{$index + 1}}</td>
 					<td class="col-sm-3">{{item.name}}</td>
 					<td class="col-sm-2" style="text-align:center"><img width="100px" height="60px" ng-src="{{item.imgSrc}}" /></td>
 					<td class="col-sm-2">
@@ -42,7 +45,6 @@
 					</td>
 				</tr>
 			</tbody>
-		</table>
-		
+		</table>		
 	</div>
 </div>

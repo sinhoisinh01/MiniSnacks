@@ -3,6 +3,7 @@ angular.module("minisnacks")
 		$scope.foods = [];
 		$scope.categories=[];
 		$scope.newComment = {};
+		$scope.newOrder = {};
 		$rootScope.currentUser = {};
 		
 		$http.get("http://localhost:3000/foods").then(function (response) {
@@ -15,11 +16,12 @@ angular.module("minisnacks")
 
 		});
 
-		currentUserId = $cookies.get('currentUserId');
-		$http.get("http://localhost:3000/users/" + currentUserId)
+		$scope.currentUserId = $cookies.get('currentUserId');
+		$http.get("http://localhost:3000/users/" + $scope.currentUserId)
 		.then(function(response) {
 			$rootScope.currentUser = response.data;
 			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+			initValuesForNewOrder();
 		});
 
 		foodId = $routeParams.foodId;
@@ -89,6 +91,7 @@ angular.module("minisnacks")
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
 						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
+						location.reload();
 					});
 				});
 			}
@@ -105,6 +108,7 @@ angular.module("minisnacks")
 							$rootScope.currentUser = response.data[i];
 							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
 							$cookies.put('currentUserId', $rootScope.currentUser.id);
+							location.reload();
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -152,6 +156,15 @@ angular.module("minisnacks")
 
 		$scope.updateCart = function() {
 			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+			req = {
+			 "method":"PUT",
+			 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+			 "headers": {
+			   "Content-Type": "application/json"
+			 },
+			 "data":$rootScope.currentUser
+			};
+			$http(req).then(function() {});
 		}
 
 		function calculateTotal(items) {
@@ -161,4 +174,32 @@ angular.module("minisnacks")
 			}
 			return total;
 		}	
+
+		$scope.checkout = function() {
+			if ($scope.newOrder) {
+				$scope.newOrder.status = "Chưa giao hàng";
+				d = new Date();
+				$scope.newOrder.created_date = d.toString();
+				$scope.newOrder.modifed_date = d.toString();
+				req = {
+				 "method":"POST",
+				 "url": "http://localhost:3000/orders",
+				 "headers": {
+				   "Content-Type": "application/json"
+				 },
+				 "data": $scope.newOrder
+				};
+				$http(req).then(function() {});
+			}
+		};
+
+		function initValuesForNewOrder() {
+			$scope.newOrder.user_id = $cookies.get('currentUserId');
+			$scope.newOrder.products = $rootScope.currentUser.cart.items;
+			$scope.newOrder.firstname = $rootScope.currentUser.firstname;
+			$scope.newOrder.lastname = $rootScope.currentUser.lastname;
+			$scope.newOrder.phone = $rootScope.currentUser.telephone;
+			$scope.newOrder.email = $rootScope.currentUser.email;
+			$scope.newOrder.address = $rootScope.currentUser.address;
+		}
 	}]);

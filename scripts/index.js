@@ -25,6 +25,11 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
         controller: "IndexController"
     })
 
+    .when("/checkout", {
+        templateUrl : "view/checkout.html",
+        controller: "IndexController"
+    })
+
 	.when("/details/:foodId", {
         templateUrl : "view/single.html",
 		      controller: "IndexController"
