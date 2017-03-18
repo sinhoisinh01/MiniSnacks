@@ -10,8 +10,9 @@
           <a href="#"><img ng-src="{{food.imgSrc}}" class="img-responsive product-img" alt=""></a>
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
-          <div class="details-in">
-            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Chi Tiết</a>
+          <div class="details-in row">
+            <button id = "bt1" class="btn btn-warning pull-right" ng-click="AddToCart(food.id)"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ</button>
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details btn pull-right">Chi tiết</a>
           </div>
           <div class="clearfix"> </div>
         </div>

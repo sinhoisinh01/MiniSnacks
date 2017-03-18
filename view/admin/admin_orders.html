@@ -6,6 +6,7 @@
 			<th>Ngày Tạo</th>
 			<th>Ngày Chỉnh Sửa</th>
 			<th>Tình Trạng</th>
+			<th></th>
 		</thead>
 		<tbody>
 			<tr ng-repeat = "order in orders | limitTo : 10">
@@ -19,6 +20,9 @@
 			        <option>Đã giao hàng</option>
 			        <option >Hủy</option>
 			      </select>
+			    </td>
+			    <td>
+			    	<a type="button" class="btn btn-primary"  href="admin/orders/{{order.id}}">Xem chi tiết</a> 
 			    </td>
 			</tr>
 		</tbody>

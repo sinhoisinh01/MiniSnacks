@@ -46,8 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="grid-header">
 					<li ng-if="!currentUserId"><a href="account">Đăng nhập / Đăng ký</a></li>
 					<li ng-if="currentUserId"><a href="/minisnacks/cart">Giỏ hàng</a> <label>/</label></li>
-					<li ng-if="currentUserId"><a href="/minisnacks/checkout">Thanh toán</a><label>/</label></li>
-					<li ng-if="currentUserId"><a href="/minisnacks/myorder">Nhật ký mua hàng</a></li>
+					<li ng-if="currentUserId && currentUser.cart.items.length > 0"><a href="/minisnacks/checkout">Thanh toán</a><label>/</label></li>
+					<li ng-if="currentUserId" style="cursor:pointer;"><a ng-click="signout()">Đăng xuất</a></li>
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -105,6 +105,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>-->
 								</ul>
 
+							</li>
+						</ul>
+						<ul class="nav navbar-nav" ng-if="currentUserId">
+							<li>
+								<a href="/minisnacks/myorder">Nhật ký mua hàng</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

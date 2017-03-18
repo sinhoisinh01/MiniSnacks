@@ -6,6 +6,7 @@ angular.module("minisnacks")
 		$scope.newOrder = {};
 		$rootScope.currentUser = {};
 		$scope.userOrder = [];
+		$scope.orderDetail = {};
 		
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
@@ -21,8 +22,10 @@ angular.module("minisnacks")
 		$http.get("http://localhost:3000/users/" + $scope.currentUserId)
 		.then(function(response) {
 			$rootScope.currentUser = response.data;
-			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
-			initValuesForNewOrder();
+			if ($rootScope.currentUser.cart.items) {
+				$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+				initValuesForNewOrder();
+			}
 		});
 
 		foodId = $routeParams.foodId;
@@ -53,7 +56,13 @@ angular.module("minisnacks")
 			});
 		}	
 		
-			
+		orderID = $routeParams.orderId;
+		if (orderID) {
+			$http.get("http://localhost:3000/orders/" + orderID).then(function (response) {
+				$scope.orderDetail = response.data;
+				console.log(response.data);
+			});
+		}
 
 		$scope.AddNewComment = function() {
 			if ($scope.newComment.author && $scope.newComment.content) {
@@ -96,7 +105,14 @@ angular.module("minisnacks")
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
 						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
-						window.location.href = "/minisnacks";
+						swal({
+							  title: "Chào " + $rootScope.currentUser.firstname + "!!!",
+							  text: "Bạn đã đăng ký thành công!!!",
+							  timer: 1000,
+							  showConfirmButton: false
+							},function(){
+								window.location.href = "/minisnacks";
+							});
 					});
 				});
 			}
@@ -111,9 +127,16 @@ angular.module("minisnacks")
 					for (i = 0; i < response.data.length; i++) {
 						if (response.data[i].email == $scope.email && response.data[i].password == $scope.password) {
 							$rootScope.currentUser = response.data[i];
-							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
 							$cookies.put('currentUserId', $rootScope.currentUser.id);
-							window.location.href = "/minisnacks";
+							swal({
+							  title: "Chào " + $rootScope.currentUser.firstname + "!!!",
+							  text: "Bạn đã đăng nhập thành công!!!",
+							  timer: 1000,
+							  showConfirmButton: false
+							},function(){
+								window.location.href = "/minisnacks";
+							});
+							
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -123,12 +146,22 @@ angular.module("minisnacks")
 			}
 		};
 
-		$scope.AddToCart = function() {
-			if (foodId) {
-
+		$scope.AddToCart = function(idFood) {
+			if (!$scope.currentUserId) {
+				swal({
+				  title: "Bạn chưa đăng nhập",
+				  text: "Cần đăng nhập để thực hiện chức năng này",
+				  timer: 1000,
+				  showConfirmButton: false
+				},function(){
+					window.location.href = "/minisnacks/account";
+					return;
+				});
+			}
+			if (foodId || idFood) {
 				flat = 1;
 				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
-					if ($rootScope.currentUser.cart.items[i].id == foodId) {
+					if ($rootScope.currentUser.cart.items[i].id == foodId || $rootScope.currentUser.cart.items[i].id == idFood) {
 						$rootScope.currentUser.cart.items[i].quantity++;
 						flat = 0;
 						req = {
@@ -144,17 +177,36 @@ angular.module("minisnacks")
 					}
 				}
 				if (flat == 1) {
-					$scope.dish.quantity = 1;
-					$rootScope.currentUser.cart.items.push($scope.dish);
-					req = {
-					 "method":"PUT",
-					 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
-					 "headers": {
-					   "Content-Type": "application/json"
-					 },
-					 "data":$rootScope.currentUser
-					};
-					$http(req).then(function() {});
+					if (idFood) {
+						$scope.dish = {};
+						$http.get("http://localhost:3000/foods/" + idFood).then(function (response) {
+							$scope.dish = response.data;
+							$scope.dish.quantity = 1;
+							$rootScope.currentUser.cart.items.push($scope.dish);
+							req = {
+							 "method":"PUT",
+							 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+							 "headers": {
+							   "Content-Type": "application/json"
+							 },
+							 "data":$rootScope.currentUser
+							};
+							$http(req).then(function() {});
+						});
+					}
+					else {
+						$scope.dish.quantity = 1;
+						$rootScope.currentUser.cart.items.push($scope.dish);
+						req = {
+						 "method":"PUT",
+						 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+						 "headers": {
+						   "Content-Type": "application/json"
+						 },
+						 "data":$rootScope.currentUser
+						};
+						$http(req).then(function() {});
+					}
 				}
 				swal("Thông báo","Đã thêm vào giỏ hàng","success");
 			}	
@@ -171,7 +223,16 @@ angular.module("minisnacks")
 			 "data":$rootScope.currentUser
 			};
 			$http(req).then(function() {});
-		}
+		};
+
+		$scope.removeFromCart = function(index) {
+			if (index > -1) {
+			    $rootScope.currentUser.cart.items.splice(index, 1);
+			}
+			if (index == 0) {
+				$scope.updateCart();
+			}			
+		};
 
 		function calculateTotal(items) {
 			total = 0;
@@ -185,6 +246,7 @@ angular.module("minisnacks")
 			if ($scope.newOrder) {
 				$scope.newOrder.status = "Chưa giao hàng";
 				d = new Date();
+				$scope.newOrder.total = $rootScope.currentUser.cart.total;
 				$scope.newOrder.created_date = d.toString();
 				$scope.newOrder.modifed_date = d.toString();
 				req = {
@@ -196,14 +258,33 @@ angular.module("minisnacks")
 				 "data": $scope.newOrder
 				};
 				$http(req).then(function(response) {
-					swal({
-						title:"Thông báo",
-						text:"Bạn đã thanh toán thành công. Vui lòng kiểm tra đơn đặt hàng của bạn",
-						type:"success"},function(){
-							window.location.href = "/minisnacks";
-						});	
+					$scope.currentUser.cart.items = null;
+					$scope.currentUser.cart.total = 0;
+					request1 = {
+					 "method":"PUT",
+					 "url": "http://localhost:3000/users/" + $scope.currentUserId,
+					 "headers": {
+					   "Content-Type": "application/json"
+					 },
+					 "data": $scope.currentUser
+					};
+					$http(request1).then(function(response) {
+						swal({
+							title:"Thông báo",
+							text:"Bạn đã thanh toán thành công. Vui lòng kiểm tra đơn đặt hàng của bạn",
+							type:"success"},function(){
+								window.location.href = "/minisnacks";
+							});
+					});
 				});
 			}
+		};
+
+		$scope.signout = function() {
+			$scope.currentUserId = null;
+			$cookies.remove('currentUserId');
+			$rootScope.currentUser = null;
+			window.location.href = "/minisnacks";
 		};
 
 		function initValuesForNewOrder() {

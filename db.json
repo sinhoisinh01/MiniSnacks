@@ -11,56 +11,50 @@
       "cart": {
         "items": [
           {
-            "id": 1,
-            "name": "Bánh tráng trộn",
-            "category": {
-              "id": 1,
-              "category_name": "Ăn nhẹ"
-            },
-            "price": "10000",
-            "imgSrc": "images/banh_trang_tron_icon.jpg",
-            "thumbnail": "images/banh_trang_tron_thumbnail.jpg",
-            "description": "Bánh tráng là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
-            "comments": [
-              {
-                "author": "Sinh",
-                "content": "Ngon lam ne"
-              }
-            ],
-            "view": "2",
-            "quantity": 1
-          },
-          {
             "id": 2,
             "name": "Bánh bèo",
             "category": {
               "id": 2,
               "category_name": "Món chính"
             },
-            "price": "15000",
+            "price": 40000,
             "imgSrc": "images/banh_beo_icon.jpg",
             "thumbnail": "images/banh_beo_thumbnail.jpg",
             "description": "Bánh bèo là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
             "comments": [],
             "view": "2",
-            "quantity": 7
+            "quantity": 4
           },
           {
-            "id": 4,
-            "name": "Xoài lắc",
+            "id": 3,
+            "name": "Bánh bao",
             "category": {
-              "id": 3,
-              "category_name": "Ăn vặt"
+              "id": 2,
+              "category_name": "Món chính"
             },
-            "price": 20000,
-            "imgSrc": "images/xoai_lac_icon.jpg",
-            "thumbnail": "images/xoai_lac_thumbnail.jpg",
-            "comments": [],
+            "price": 15000,
+            "imgSrc": "images/banh_bao_icon.jpg",
+            "thumbnail": "images/banh_bao_thumbnail.jpg",
+            "description": " là một loại bánh làm bằng bột mỳ có nhân và hấp trong ẩm thực Trung Hoa. Nó giống với loại bánh màn thầu truyền thống của Trung Quốc. Nhân bánh bao được làm bằng thịt và/hoặc rau. Bánh bao thường được dùng bất cứ bữa ăn nào trong ngày trong văn hóa Trung Hoa, và thường được người Trung Quốc dùng làm món ăn bữa sáng.",
+            "comments": [
+              {
+                "author": "Sinh",
+                "content": "Test thử"
+              },
+              {
+                "author": "asdf",
+                "content": "asdf"
+              },
+              {
+                "author": "1234",
+                "content": "asdf"
+              }
+            ],
             "view": "2",
-            "quantity": 4
+            "quantity": 1
           }
         ],
-        "total": 200000
+        "total": 135000
       },
       "id": "HJaf25gie"
     },
@@ -78,7 +72,7 @@
   "orders": [
     {
       "id": 1,
-      "user_id": 1,
+      "user_id": "HJaf25gie",
       "products": [
         {
           "id": 1,
@@ -109,7 +103,7 @@
     },
     {
       "id": 2,
-      "user_id": 1,
+      "user_id": "HJaf25gie",
       "products": [
         {
           "id": 1,
@@ -151,7 +145,7 @@
     },
     {
       "id": 3,
-      "user_id": 3,
+      "user_id": "HJaf25gie",
       "products": [
         {
           "id": 1,
@@ -252,6 +246,7 @@
       "status": "Chưa giao hàng",
       "created_date": "Sat Mar 18 2017 08:00:39 GMT+0700 (SE Asia Standard Time)",
       "modifed_date": "Sat Mar 18 2017 08:00:39 GMT+0700 (SE Asia Standard Time)",
+      "total": 140000,
       "id": 4
     },
     {
@@ -275,7 +270,7 @@
             }
           ],
           "view": "2",
-          "quantity": 3
+          "quantity": 1
         },
         {
           "id": 2,
@@ -312,11 +307,88 @@
       "phone": "0123456789",
       "email": "doanphucsinh@gmail.com",
       "address": "264 Nguyễn Văn Đậu",
-      "note": "Test ABC",
       "status": "Chưa giao hàng",
-      "created_date": "Sat Mar 18 2017 08:22:55 GMT+0700 (SE Asia Standard Time)",
-      "modifed_date": "Sat Mar 18 2017 08:22:55 GMT+0700 (SE Asia Standard Time)",
+      "created_date": "Sat Mar 18 2017 08:40:38 GMT+0700 (SE Asia Standard Time)",
+      "modifed_date": "Sat Mar 18 2017 08:40:38 GMT+0700 (SE Asia Standard Time)",
       "id": 5
+    },
+    {
+      "user_id": "HJaf25gie",
+      "products": [
+        {
+          "id": 1,
+          "name": "Bánh tráng trộn",
+          "category": {
+            "id": 1,
+            "category_name": "Ăn nhẹ"
+          },
+          "price": "10000",
+          "imgSrc": "images/banh_trang_tron_icon.jpg",
+          "thumbnail": "images/banh_trang_tron_thumbnail.jpg",
+          "description": "Bánh tráng là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
+          "comments": [
+            {
+              "author": "Sinh",
+              "content": "Ngon lam ne"
+            }
+          ],
+          "view": "2",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Bánh bèo",
+          "category": {
+            "id": 2,
+            "category_name": "Món chính"
+          },
+          "price": "15000",
+          "imgSrc": "images/banh_beo_icon.jpg",
+          "thumbnail": "images/banh_beo_thumbnail.jpg",
+          "description": "Bánh bèo là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
+          "comments": [],
+          "view": "2",
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "name": "Xoài lắc",
+          "category": {
+            "id": 3,
+            "category_name": "Ăn vặt"
+          },
+          "price": 20000,
+          "imgSrc": "images/xoai_lac_icon.jpg",
+          "thumbnail": "images/xoai_lac_thumbnail.jpg",
+          "comments": [],
+          "view": "2",
+          "quantity": 2
+        },
+        {
+          "id": 6,
+          "name": "Chè bà ba",
+          "category": {
+            "id": 4,
+            "category_name": "Tráng miệng"
+          },
+          "price": 8000,
+          "imgSrc": "images/che_ba_ba_icon.jpg",
+          "thumbnail": "images/che_ba_ba_thumbnail.jpg",
+          "comments": [],
+          "view": "4",
+          "quantity": 2
+        }
+      ],
+      "firstname": "Sinh",
+      "lastname": "Đoàn Phúc",
+      "phone": "0123456789",
+      "email": "doanphucsinh@gmail.com",
+      "address": "264 Nguyễn Văn Đậu",
+      "status": "Chưa giao hàng",
+      "total": 81000,
+      "created_date": "Sat Mar 18 2017 09:52:15 GMT+0700 (SE Asia Standard Time)",
+      "modifed_date": "Sat Mar 18 2017 09:52:15 GMT+0700 (SE Asia Standard Time)",
+      "id": 8
     }
   ],
   "categories": [
@@ -348,11 +420,11 @@
       "price": 40000,
       "imgSrc": "images/banh_trang_tron_icon.jpg",
       "thumbnail": "images/banh_trang_tron_thumbnail.jpg",
-      "description": "Bánh bèo là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
+      "description": "Bánh tráng là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh tráng trộn gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
       "comments": [
         {
-          "author": "d",
-          "content": "d"
+          "author": "Sinh",
+          "content": "Ngon lam ne"
         }
       ],
       "view": "2"
@@ -362,9 +434,9 @@
       "name": "Bánh bèo",
       "category": {
         "id": 2,
-        "category_name": "Ăn vặt"
+        "category_name": "Món chính"
       },
-      "price": 20000,
+      "price": 40000,
       "imgSrc": "images/banh_beo_icon.jpg",
       "thumbnail": "images/banh_beo_thumbnail.jpg",
       "description": "Bánh bèo là một món bánh rất thịnh hành ở miền Trung, ngoài ra cũng có nhiều ở miền Nam Việt Nam. Bánh bèo gồm có ba phần chính là bánh làm từ bột gạo, nhân để rắc lên bánh làm bằng tôm xay nhuyễn, và nước chấm, một hỗn hợp mà nước mắm là thành phần chính và thường đổ trực tiếp vào bánh chứ không cần chấm. Thành phần phụ của bánh bèo thường là mỡ hành, đậu phộng rang giã nhỏ. Tuỳ theo địa phương, có những cách thêm bớt khác nhau cho món bánh này, ví dụ ở Sài Gòn thường bỏ đậu xanh, đồ chua, lại cho ăn kèm bánh đúc, bánh ít, bánh bột lọc.Tại miền Trung, bánh bèo thường được phân ra làm hai loại là bánh bèo Quảng Nam và bánh bèo Huế. Bánh bèo Quảng Nam thường thì bánh to, dày, ăn với nhân là bột nấu nhão gồm có thịt, tôm băm, hẹ, khi ăn bỏ thêm ít hành phi, ớt băm. Bánh bèo Huế có khác chút ít, bánh mỏng hơn, có bột tôm sấy, khi ăn kèm theo da heo chiên giòn. Bánh bèo miền Trung đa phần đúc bằng chén (bánh bèo chén). Sang tới miền Nam thì bánh bèo có nhiều kiểu cách khác nhau, nhưng thường là ăn chung với nhiều loại bánh cũng như gia vị khác, làm cho hương vị đặc trưng của bánh bèo mất đi phần nào.Tên bánh bèo có thể xuất phát từ hình dạng của nó: giống như cái lá của cây bèo.",
@@ -447,7 +519,12 @@
       "price": 70000,
       "imgSrc": "images/hot_vit_lon_icon.jpg",
       "thumbnail": "images/hot_vit_lon_thumbnail.jpg",
-      "comments": [],
+      "comments": [
+        {
+          "author": "Vit",
+          "content": "sao tui m ban trung cua t"
+        }
+      ],
       "view": "3"
     },
     {

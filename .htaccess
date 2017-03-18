@@ -36,6 +36,9 @@ RewriteRule ^account/$ ./index.html?action=account
 RewriteRule ^myorder$ http://%{HTTP_HOST}/minisnacks/myorder/ [R=301,L]
 RewriteRule ^myorder/$ ./index.html?action=myorder
 
+# My Order Detail
+RewriteRule ^myorder/[\d+]$ ./index.html?action=myorder&id=$1
+
 # Search
 RewriteRule ^search$ http://%{HTTP_HOST}/minisnacks/search/ [R=301,L]
 RewriteRule ^search/$ ./index.html?action=search
