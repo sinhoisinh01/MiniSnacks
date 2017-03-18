@@ -15,6 +15,11 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
       	controller: "IndexController"
     })
 
+    .when("/myorder", {
+        templateUrl : "view/myorder.html",
+        controller: "IndexController"
+    })
+
     .when("/shop", {
         templateUrl : "view/shop.html",
       	controller: "IndexController"

@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/megamenu.css" type="text/css" media="all" />
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <link rel="stylesheet" href="css/ownStyle.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/sweetalert.css" type="text/css" media="all" />
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
@@ -45,7 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="grid-header">
 					<li ng-if="!currentUserId"><a href="account">Đăng nhập / Đăng ký</a></li>
 					<li ng-if="currentUserId"><a href="/minisnacks/cart">Giỏ hàng</a> <label>/</label></li>
-					<li ng-if="currentUserId"><a href="/minisnacks/checkout">Thanh toán</a></li>
+					<li ng-if="currentUserId"><a href="/minisnacks/checkout">Thanh toán</a><label>/</label></li>
+					<li ng-if="currentUserId"><a href="/minisnacks/myorder">Nhật ký mua hàng</a></li>
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -156,6 +158,7 @@ uspendisse venenatis dolor et nunc iaculis ege</p>
 <script src="js/move-top.js"></script>
 <script src="js/easing.js"></script>
 <script src="js/config.js"></script>
+<script src="js/sweetalert.min.js"></script>
 <script src="scripts/index.js"></script>
 <script src="scripts/controller/IndexController.js"></script>
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

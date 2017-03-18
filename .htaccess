@@ -32,6 +32,10 @@ RewriteRule ^cart/$ ./index.html?action=cart
 RewriteRule ^account$ http://%{HTTP_HOST}/minisnacks/account/ [R=301,L]
 RewriteRule ^account/$ ./index.html?action=account
 
+# My Order
+RewriteRule ^myorder$ http://%{HTTP_HOST}/minisnacks/myorder/ [R=301,L]
+RewriteRule ^myorder/$ ./index.html?action=myorder
+
 # Search
 RewriteRule ^search$ http://%{HTTP_HOST}/minisnacks/search/ [R=301,L]
 RewriteRule ^search/$ ./index.html?action=search

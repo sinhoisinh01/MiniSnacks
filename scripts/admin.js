@@ -21,5 +21,8 @@ app.config(function($locationProvider,$routeProvider) {
       templateUrl : "view/admin/admin_category.html",
       controller :  "adminCategory"
     //goi o day thi khong can khai bao controller trong trang html
+    }).when("/admin/user",{
+      templateUrl :"view/admin/admin_user.html",
+      controller : "adminUser"
     });
 });

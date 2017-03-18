@@ -5,6 +5,7 @@ angular.module("minisnacks")
 		$scope.newComment = {};
 		$scope.newOrder = {};
 		$rootScope.currentUser = {};
+		$scope.userOrder = [];
 		
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
@@ -32,6 +33,10 @@ angular.module("minisnacks")
 			});
 		}	
 
+		$http.get("http://localhost:3000/orders?user_id_like=" + $scope.currentUserId)
+		.then(function (response) {
+			$scope.userOrder = response.data;
+		});
 		
 		categoryId = $routeParams.categoryId;
 
@@ -118,8 +123,14 @@ angular.module("minisnacks")
 			}
 		};
 
+<<<<<<< HEAD
 		$scope.AddToCart = function(idFood) {
 			if (foodId || idFood) {
+=======
+		$scope.AddToCart = function() {
+			if (foodId) {
+
+>>>>>>> a5aadeaf5bc089cd26f7a4c8ed47668033705287
 				flat = 1;
 				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
 					if ($rootScope.currentUser.cart.items[i].id == foodId || $rootScope.currentUser.cart.items[i].id == idFood) {
@@ -169,7 +180,7 @@ angular.module("minisnacks")
 						$http(req).then(function() {});
 					}
 				}
-				console.log($rootScope.currentUser.cart);
+				swal("Thông báo","Đã thêm vào giỏ hàng","success");
 			}	
 		}
 
@@ -209,7 +220,12 @@ angular.module("minisnacks")
 				 "data": $scope.newOrder
 				};
 				$http(req).then(function(response) {
-					window.location.href = "/minisnacks";
+					swal({
+						title:"Thông báo",
+						text:"Bạn đã thanh toán thành công. Vui lòng kiểm tra đơn đặt hàng của bạn",
+						type:"success"},function(){
+							window.location.href = "/minisnacks";
+						});	
 				});
 			}
 		};
