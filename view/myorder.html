@@ -3,13 +3,14 @@
 		<figure class="page-header">
 		  <h1 style="color:black">Lịch sử mua hàng</h1>
 		</figure>
-		<table class="table table-bordered table-striped table-hover responsive">
+		<table class="table table-bordered responsive" ng-if="userOrder.length > 0" style="background:white">
 			<thead>
 				<th>#</th>
 				<th>Mã Hóa Đơn</th>
 				<th>Ngày Tạo</th>
 				<th>Ngày Chỉnh Sửa</th>
 				<th>Tình Trạng</th>
+				<th></th>
 			</thead>
 			<tbody>
 				<tr ng-repeat = "order in userOrder">
@@ -18,8 +19,14 @@
 					<td ng-bind="order.created_date | date:'dd/MM/yyyy'"></td>
 					<td ng-bind="order.modifed_date | date:'dd/MM/yyyy'"></td>
 					<td id="status" ng-bind="order.status"></td>
+					<td><a href="http://localhost/minisnacks/myorder/{{order.id}}">Xem chi tiết</a></td>
 				</tr>
 			</tbody>
 		</table>
+		<figure class="jumbotron" style="background:white" ng-if="userOrder.length == 0">
+		    <center>
+		    	<p>Bạn chưa mua sản phẩm nào. Tham quan <a href="http://localhost/minisnacks/">cửa hàng</a> ngay !!!</p>
+		    </center>
+	  	</figure>	
 	</section>
 </main>

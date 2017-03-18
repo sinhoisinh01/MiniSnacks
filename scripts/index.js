@@ -10,6 +10,7 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
         templateUrl : "view/account.html",
       	controller: "IndexController"
     })
+
     .when("/shop/:categoryId", {
         templateUrl : "view/shop.html",
       	controller: "IndexController"
@@ -17,6 +18,11 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
 
     .when("/myorder", {
         templateUrl : "view/myorder.html",
+        controller: "IndexController"
+    })
+
+    .when("/myorder/:orderId", {
+        templateUrl : "view/order_detail.html",
         controller: "IndexController"
     })
 

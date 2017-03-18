@@ -2,12 +2,12 @@
         <div class="row cart-head">
             <div class="container">
                 <div class="page-header">
-                  <h1 style="color:black">Thông tin hóa đơn</h1>
+                  <h1 style="color:black">Thông tin chi tiết hóa đơn</h1>
                 </div>
             </div>
         </div>    
         <div class="row cart-body">
-            <form class="form-horizontal" method="post" action="http://localhost/minisnacks">
+            <form class="form-horizontal" method="post">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                 <!--SHIPPING METHOD-->
                 <div class="panel panel-info">
@@ -21,38 +21,38 @@
                         <div class="form-group">
                             <div class="col-md-6 col-xs-12">
                                 <strong>Họ:</strong>
-                                <input type="text" name="first_name" class="form-control" ng-model="newOrder.lastname" />
+                                <input type="text" name="first_name" class="form-control" ng-model="orderDetail.lastname" disabled />
                             </div>
                             <div class="span1"></div>
                             <div class="col-md-6 col-xs-12">
                                 <strong>Tên:</strong>
-                                <input type="text" name="last_name" class="form-control" ng-model="newOrder.firstname" />
+                                <input type="text" name="last_name" class="form-control" ng-model="orderDetail.firstname" disabled />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12"><strong>Địa chỉ:</strong></div>
                             <div class="col-md-12">
-                                <input type="text" name="address" class="form-control" ng-model="newOrder.address" />
+                                <input type="text" name="address" class="form-control" ng-model="orderDetail.address" disabled />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
                             <div class="col-md-12">
-                                <input type="text" name="zip_code" class="form-control" ng-model="newOrder.ZipCode" value="" />
+                                <input type="text" name="zip_code" class="form-control" ng-model="orderDetail.ZipCode" disabled />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12"><strong>Điện thoại liên lạc:</strong></div>
-                            <div class="col-md-12"><input type="text" name="phone_number" class="form-control" ng-model="newOrder.phone" /></div>
+                            <div class="col-md-12"><input type="text" name="phone_number" class="form-control" ng-model="orderDetail.phone" disabled /></div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12"><strong>Email:</strong></div>
-                            <div class="col-md-12"><input type="text" name="email_address" class="form-control" ng-model="newOrder.email" /></div>
+                            <div class="col-md-12"><input type="text" name="email_address" class="form-control" ng-model="orderDetail.email" disabled /></div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12"><strong>Ghi chú:</strong></div>
                             <div class="col-md-12">
-                                <textarea class="form-control" rows="5" ng-model="newOrder.note"></textarea>
+                                <textarea class="form-control" rows="5" ng-model="orderDetail.note" disabled></textarea>
                             </div>
                         </div>
                     </div>
@@ -64,10 +64,10 @@
                 <!--REVIEW ORDER-->
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        Danh sách mua hàng <div class="pull-right"><small><a class="afix-1" href="http://localhost/minisnacks/cart">Cập nhật lại giỏ hàng</a></small></div>
+                        Danh sách mua hàng
                     </div>
                     <div class="panel-body">
-                        <div class="form-group" ng-repeat="item in currentUser.cart.items">
+                        <div class="form-group" ng-repeat="item in orderDetail.products">
                             <div class="col-sm-3 col-xs-3">
                                 <img class="img-responsive" src="{{item.imgSrc}}" width="100px" height="70px" />
                             </div>
@@ -84,14 +84,14 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <strong>Thành tiền</strong>
-                                <div class="pull-right"><span>{{currentUser.cart.total | number:0}} VND</span></div>
+                                <div class="pull-right"><span>{{orderDetail.total | number:0}} VND</span></div>
                             </div>
                         </div>
                         <div class="form-group"><hr /></div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <strong>Tổng hóa đơn</strong>
-                                <div class="pull-right"><span>{{currentUser.cart.total * 1.1 | number:0}} VND - Đã bao gồm VAT 10%</span></div>
+                                <div class="pull-right"><span>{{orderDetail.total * 1.1 | number:0}} VND - Đã bao gồm VAT 10%</span></div>
                             </div>
                         </div>
                     </div>
@@ -100,8 +100,5 @@
             </div>
             
             </form>
-        </div>
-        <div class="row cart-footer" style="margin-bottom:20px">
-            <button type="submit" class="btn btn-primary btn-block" ng-click="checkout()"><h3>Thanh toán</h3></button>
         </div>
 </div>
