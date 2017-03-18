@@ -123,14 +123,8 @@ angular.module("minisnacks")
 			}
 		};
 
-<<<<<<< HEAD
 		$scope.AddToCart = function(idFood) {
 			if (foodId || idFood) {
-=======
-		$scope.AddToCart = function() {
-			if (foodId) {
-
->>>>>>> a5aadeaf5bc089cd26f7a4c8ed47668033705287
 				flat = 1;
 				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
 					if ($rootScope.currentUser.cart.items[i].id == foodId || $rootScope.currentUser.cart.items[i].id == idFood) {
