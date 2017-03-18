@@ -6,15 +6,17 @@
 						<img class="img-responsive" src="{{dish.thumbnail}}" alt="" />
 						<div class="" style="position:relative">
 							<h5 class="pull-left">{{dish.name}}</h5>
-							<button class="btn btn-warning pull-right" ng-click="AddToCart()"><span class="glyphicon glyphicon-shopping-car"></span>Thêm vào giỏ hàng</button>
+							<button class="btn btn-warning pull-right" style="margin-left: 310px;margin-top: 10px;" ng-click="AddToCart()"><span class="glyphicon glyphicon-shopping-car"></span>Thêm vào giỏ hàng</button>
 						</div>		
-						<p>{{dish.description}}</p>
+						<div>
+							<p>{{dish.description}}</p>
+						</div>
 					</div>
 					  <ul class="comment-list" ng-if="dish.comments.length == 0">
-						<h5 class="post-author_head">Be the first one who feedback for this food!!!</h5>
+						<h5 class="post-author_head">Hãy là người đầu tiên cảm nhận về món ăn này!!!</h5>
 					 </ul>
 					 <ul class="comment-list" ng-repeat="cmt in dish.comments">
-						<h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">{{cmt.author}}</a></h5>
+						<h5 class="post-author_head">Viết bởi <a href="#" title="Posts by admin" rel="author">{{cmt.author}}</a></h5>
 						 <li>
 							<img src="images/avatar.png" class="img-responsive" alt="">
 						   <div class="desc">
@@ -24,10 +26,10 @@
 						 </li>
 					 </ul>
 				<div class="comments-area">
-						<h3>Add New Comment</h3>
+						<h3>Thêm Lời Bình</h3>
 						<form>
 							<p>
-								<label>Name</label>
+								<label>Tên</label>
 								
 								<input type="text" value="" ng-model="newComment.author">
 							</p>
@@ -41,12 +43,12 @@
 								<input type="text" value="">
 							</p>
 							<p>
-								<label>Subject</label>
+								<label>Miêu tả</label>
 								
 								<textarea ng-model="newComment.content"></textarea>
 							</p>
 							<div class="sub-in">
-								<input type="button" value="Submit Comment" ng-click="AddNewComment()">
+								<input type="button" class="btn btn-warning" value="Xác nhận lời bình" ng-click="AddNewComment()">
 							</div>
 						</form>
 				  </div>
@@ -54,50 +56,28 @@
 		</div>
 		<div class="col-md-3 single-bottom">
 				<div class="store-right">
-					<h6> Categories</h6>
+					<h6> Danh Mục</h6>
 					<ul class="store-men">
-						<li><a href="#"><span> </span>Contrary to popular </a></li>
+						<li><a ng-href="/minisnacks/shop"><span></span>Tất cả</a></li>	
+						<li ng-repeat='category in categories'><a ng-href="/minisnacks/shop/{{category.id}}"><span></span>{{category.category_name}}</a></li>	
+						<!--<li><a href="#"><span> </span>Phổ</a></li>
 						<li><a href="#"><span> </span>simply random text</a></li>
 						<li><a href="#"><span> </span> Lorem Ipsum passage </a></li>
 						<li><a href="#"><span> </span>undoubtable source </a></li>
-						<li><a href="#"><span> </span>Finibus Bonorum et</a></li>
-						<li class="last"><a href="#"><span> </span>word in classical literature </a></li>
+						<li><a href="#"><span> </span>Finibus Bonorum et</a></li>-->
+						<li class="last"><span></span></li>
 					</ul>
 				</div>		
 				<div class="store-right">
-					<h6>Top rated products</h6>
-					<div class="product">
-						<img class="img-responsive fashion" src="images/st1.jpg" alt=""/>
+					<h6>Các sản phẩm được đánh giá cao nhất</h6>
+					<div class="product" ng-repeat='food in foods | limitTo:4'>
+						<img ng-src="{{food.thumbnail}}" height="100px" width="110px" />
 					<div class="grid-product">
-						<a href="#" class="elit">consectetuer adipiscing elit</a>
-						<span class="price price-in"><small>$15.00</small> $10.00</span>
+						<a ng-href="/minisnacks/details/{{food.id}}" class="elit">{{food.name}}</a>
+						<span class="price price-in"><small>{{food.price | number}} VNĐ</small></span>
 					</div>
-					<div class="clearfix"> </div>
-					</div>
-					<div class="product">
-						<img class="img-responsive fashion" src="images/st2.jpg" alt=""/>
-					<div class="grid-product">
-						<a href="#" class="elit">consectetuer adipiscing elit</a>
-						<span class="price price-in"><small>$15.00</small> $10.00</span>
-					</div>
-					<div class="clearfix"> </div>
-					</div>
-					<div class="product">
-						<img class="img-responsive fashion" src="images/st3.jpg" alt=""/>
-					<div class="grid-product">
-						<a href="#" class="elit">consectetuer adipiscing elit</a>
-						<span class="price price-in"><small>$150.00</small> $10.00</span>
-					</div>
-					<div class="clearfix"> </div>
-					</div>
-					<div class="product">
-						<img class="img-responsive fashion" src="images/st4.jpg" alt=""/>
-						<div class="grid-product">
-							<a href="#" class="elit">consectetuer adipiscing elit</a>
-							<span class="price price-in"><small>$15.00</small> $10.00</span>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<div class="clearfix"></div>
+					</div>				
 				</div>	
 			</div>
 		<div class="clearfix"> </div>

@@ -3,7 +3,7 @@
   <div class="col-md-12 food-grid">
     <div class="cup cffffff">
       <div class="food-header cf44336">
-        <h2>Common</h2>
+        <h2>Thường Dùng</h2>
       </div>
       <div class="col-md-3" ng-repeat="food in foods| filter:searchText">
         <div class="cup-in">
@@ -11,7 +11,7 @@
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
           <div class="details-in">
-            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Details</a>
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Chi Tiết</a>
           </div>
           <div class="clearfix"> </div>
         </div>
@@ -29,7 +29,7 @@
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
           <div class="details-in">
-            <a href="#" class="details">Details</a>
+            <a href="#" class="details">Chi Tiết</a>
           </div>
           <div class="clearfix"> </div>
         </div>
