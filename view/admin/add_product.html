@@ -1,98 +1,105 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content">
+	<script>
+		var app = angular.module("add_product")
+		app.controller('add_productCTL', ['$scope', '$http', function($scope, $http) {
+		}])
+	</script>
 	
-	<section class="content-header">
-	  <h1>
-		Dashboard
-		<small>Version 2.0</small>
-	  </h1>
-	  <ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-		<li class="active">Thêm</li>
-	  </ol>
-	</section>
 	
-	<section class="content" style="margin-top:50px ">
-		<div class="row">
-		<div class="col-md-12">
-			<div class="col-md-10">
-			<form class="form-horizontal">
-			  <div class="form-group">
-				<div class="row">
-				<label class="control-label col-sm-2" >Tên:</label>
-				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="name" placeholder="Nhập tên" ng-model="product.name">
-				</div>
-				</div>
-			  </div>
-			  <div class="form-group">
-			  	<div class="row">
-				<label class="control-label col-sm-2" >Giá:</label>
-				<div class="col-sm-10"> 
-				  <input type="text" class="form-control" id="price" placeholder="Nhập giá" ng-model="product.price">
-				</div>
-				</div>
-			  </div>
-			  <div class="form-group">
-			  	<div class="row">
-				<label class="control-label col-sm-2" >Hình ảnh:</label>
-				<div class="col-sm-10">
-				<label class="btn btn-primary">
-				Chọn hình ảnh
-					<input type="file" id="image_large" onchange="insertImage(this)" style="display: none">
-				</label>
-					<b id="image-large-file"></b>
-				  <script>
-				  function insertImage(fileImage){
-				  	var realFile = $(fileImage).val().split("\\")[2];
-				  	
-				  	$("#image-large-file").html(realFile);
-				  }
-				  </script>
-				</div>
-				</div>
-			  </div>
-			  <div class="form-group">
-			  	<div class="row">
-				<label class="control-label col-sm-2" >Ảnh chi tiết:</label>
-				<div class="col-sm-10">
-				<label class="btn btn-primary">
-					Chọn hình ảnh
-					<input type="file" id="image_small" onchange="insertImage1(this)" style="display: none" >
-				</label>
-				  <b id="image-small-file"></b>
-				  <script>
-				  function insertImage1(fileImage){
-				  	var realFile = $(fileImage).val().split("\\")[2];
-				  	
-				  	$("#image-small-file").html(realFile);
-				  }
-				  </script>
-				</div>
-				</div>
-			  </div>
-			  
-			  <div class="form-group">
-			  	<div class="row">
-				<label class="control-label col-sm-2" >Mô tả:</label>
-				<div class="col-sm-10"> 
-				  <textarea class="form-control" rows="5" id="description" ng-model="product.description" placeholder="Nhập mô tả"></textarea>
-				</div>
-				</div>
-			  </div>
-			  <div class="form-group"> 
-				<div class="col-sm-offset-2 col-sm-10">
-				<div class="row" >
-				  <button type="button" class="btn btn-primary btn-lg" ng-click="saveProduct()">Lưu</button>
-				  
-				  <button type="button" class="btn btn-danger btn-lg" ng-click="cancel()">Hủy</button>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content">
+		
+		<section class="content-header">
+		  <h1>
+			Dashboard
+			<small>Version 2.0</small>
+		  </h1>
+		  <ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+			<li class="active">Thêm</li>
+		  </ol>
+		</section>
+		
+		<section class="content" style="margin-top:50px ">
+			<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-10">
+				<form class="form-horizontal">
+				  <div class="form-group">
+					<div class="row">
+					<label class="control-label col-sm-2" >Tên:</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="name" placeholder="Nhập tên" ng-model="product.name">
+					</div>
+					</div>
 				  </div>
+				  <div class="form-group">
+				  	<div class="row">
+					<label class="control-label col-sm-2" >Giá:</label>
+					<div class="col-sm-10"> 
+					  <input type="text" class="form-control" id="price" placeholder="Nhập giá" ng-model="product.price">
+					</div>
+					</div>
+				  </div>
+				  <div class="form-group">
+				  	<div class="row">
+					<label class="control-label col-sm-2" >Hình ảnh:</label>
+					<div class="col-sm-10">
+					<label class="btn btn-primary">
+					Chọn hình ảnh
+						<input type="file" id="image_large" onchange="insertImage(this)" style="display: none">
+					</label>
+						<b id="image-large-file"></b>
+					  <script>
+					  function insertImage(fileImage){
+					  	var realFile = $(fileImage).val().split("\\")[2];
+					  	
+					  	$("#image-large-file").html(realFile);
+					  }
+					  </script>
+					</div>
+					</div>
+				  </div>
+				  <div class="form-group">
+				  	<div class="row">
+					<label class="control-label col-sm-2" >Ảnh chi tiết:</label>
+					<div class="col-sm-10">
+					<label class="btn btn-primary">
+						Chọn hình ảnh
+						<input type="file" id="image_small" onchange="insertImage1(this)" style="display: none" >
+					</label>
+					  <b id="image-small-file"></b>
+					  <script>
+					  function insertImage1(fileImage){
+					  	var realFile = $(fileImage).val().split("\\")[2];
+					  	
+					  	$("#image-small-file").html(realFile);
+					  }
+					  </script>
+					</div>
+					</div>
+				  </div>
+				  
+				  <div class="form-group">
+				  	<div class="row">
+					<label class="control-label col-sm-2" >Mô tả:</label>
+					<div class="col-sm-10"> 
+					  <textarea class="form-control" rows="5" id="description" ng-model="product.description" placeholder="Nhập mô tả"></textarea>
+					</div>
+					</div>
+				  </div>
+				  <div class="form-group"> 
+					<div class="col-sm-offset-2 col-sm-10">
+					<div class="row" >
+					  <button type="button" class="btn btn-primary btn-lg" ng-click="saveProduct()">Lưu</button>
+					  
+					  <button type="button" class="btn btn-danger btn-lg" ng-click="cancel()">Hủy</button>
+					  </div>
+					</div>
+				  </div>
+				</form>
 				</div>
-			  </div>
-			</form>
 			</div>
 		</div>
-	</div>
-	</section>		
-	
-</div>
+		</section>		
+		
+    </div>

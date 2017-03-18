@@ -12,24 +12,27 @@
           </div>
           </div>
           </div>
-
+<div class="inner-wrapper">
    <table class="table table-stripped table-bordered">
      <thead>
        <th style="width: 100px">#</th>
        <th>Tên danh mục</th>
        <th>Số lượng sản phẩm</th>
+       <th></th>
      </thead>
      <tbody >
        <tr ng-repeat="category in categories | limitTo: 10">
          <td>{{$index+1}} <br>
           </td>
           <td>
-           <a type="button" class="btn-link" data-toggle="modal" data-target="#myModal" ng-click="get(category.id)"><span class="glyphicon glyphicon-pencil"></span></a> 
-           <a href="" class="btn-link" ng-click="remove(category.id,category.category_name)"><span class="glyphicon glyphicon-trash"></span></a>
-           &boxV;{{category.category_name}}
+          {{category.category_name}}
           </td>
          
          <td></td>
+         <td> 
+            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="get(category.id)"><span class="glyphicon glyphicon-pencil"></span></a> 
+           <a href="" class="btn btn-danger" ng-click="remove(category.id,category.category_name)"><span class="glyphicon glyphicon-trash"></span></a>
+          </td>
        </tr>
      </tbody>
    </table>
@@ -68,4 +71,5 @@
     </div>
 
   </div>
+</div>
 </div>

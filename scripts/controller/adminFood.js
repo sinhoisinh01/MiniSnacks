@@ -16,12 +16,27 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 		};
 
 		$scope.remove = function(id) {
-			for(i = 0; i < $scope.foods.length; i++) {
-				if ( $scope.foods[i].id == id ) {
-					$scope.foods.splice(i, 1);
+			swal({
+				title: "Thông báo",
+				text: "Bạn có chắc chắn là muốn xóa sản phẩm này không ?",
+				type: "warning",
+				showCancelButton: true,
+				cancelButtonText:"Không",
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "Có",
+				closeOnConfirm: false
+			},
+			function(){
+				for(i = 0; i < $scope.foods.length; i++) {
+					if ( $scope.foods[i].id == id ) {
+						$scope.foods.splice(i, 1);
+					}
 				}
-			}
-			$http.delete("http://localhost:3000/foods/" + id).then();
+				$http.delete("http://localhost:3000/foods/" + id).then( function(){
+					swal("Thành công", "Sản phẩm của bạn đã được xóa !", "success");
+				});
+			});
+
 		};
 
 		$scope.get = function(id) {
@@ -36,7 +51,6 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 		};
 
 		$scope.update = function(id, food,ficFile) {
-			console.log($(ficFile).val());
 			var req = {
 			 "method":"PUT",
 			 "url": "http://localhost:3000/foods/" + id,
@@ -45,9 +59,10 @@ angular.module("minisnacks-admin").controller('AdminFood', ['$scope', '$http', f
 			 },
 			 "data":food
 			};
+
 			$http(req).then( function(response) {
-				console.log(response);	
+				swal("Thành công", "Sửa sản phẩm thành công", "success")
 			});
 		};
-		
+
 	}]);
