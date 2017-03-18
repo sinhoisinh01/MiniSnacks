@@ -91,7 +91,7 @@ angular.module("minisnacks")
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
 						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
-						location.reload();
+						window.location.href = "/minisnacks";
 					});
 				});
 			}
@@ -108,7 +108,7 @@ angular.module("minisnacks")
 							$rootScope.currentUser = response.data[i];
 							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
 							$cookies.put('currentUserId', $rootScope.currentUser.id);
-							location.reload();
+							window.location.href = "/minisnacks";
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -189,7 +189,9 @@ angular.module("minisnacks")
 				 },
 				 "data": $scope.newOrder
 				};
-				$http(req).then(function() {});
+				$http(req).then(function(response) {
+					window.location.href = "/minisnacks";
+				});
 			}
 		};
 
