@@ -329,22 +329,6 @@
       "thumbnail": "images/banh_trang_nuong_thumbnail.jpg",
       "comments": [],
       "view": "10"
-    },
-    {
-      "name": "adawdaw",
-      "price": "awdawdawdaw",
-      "imgSrc": "",
-      "thumbnail": "",
-      "description": "awdawdawdwa",
-      "id": 9
-    },
-    {
-      "name": "asd",
-      "price": "70000",
-      "imgSrc": "",
-      "thumbnail": "",
-      "description": "yeah",
-      "id": 10
     }
   ]
 }
