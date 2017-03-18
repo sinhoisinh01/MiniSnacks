@@ -3,15 +3,16 @@
   <div class="col-md-12 food-grid">
     <div class="cup cffffff">
       <div class="food-header cf44336">
-        <h2>Common</h2>
+        <h2>Mới Nhất</h2>
       </div>
       <div class="col-md-3" ng-repeat="food in foods| filter:searchText">
         <div class="cup-in">
           <a ng-href="/minisnacks/details/{{food.id}}"><img ng-src="{{food.imgSrc}}" class="img-responsive product-img" alt=""></a>
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
-          <div class="details-in">
-            <a ng-href="/minisnacks/details/{{food.id}}" class="details">Details</a>
+          <div class="details-in row">
+            <button id = "bt1" class="btn btn-warning pull-right" ng-click="AddToCart(food.id)"><span class="glyphicon glyphicon-shopping-car"></span>Thêm vào giỏ hàng</button>
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details btn pull-right">Chi tiết</a>
           </div>
           <div class="clearfix"> </div>
         </div>
@@ -25,11 +26,12 @@
       </div>
       <div class="col-md-3" ng-repeat="food in foods | orderBy : 'view' | limitTo: 4">
         <div class="cup-in">
-          <a href="single.html"><img src="{{food.imgSrc}}" class="img-thumbnail" alt=""></a>
+          <a href="single.html"><img src="{{food.imgSrc}}" class="img-thumbnail product-img" alt=""></a>
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
-          <div class="details-in">
-            <a href="#" class="details">Details</a>
+          <div class="details-in row">
+            <button id = "bt1" class="btn btn-warning pull-right" ng-click="AddToCart(food.id)"><span class="glyphicon glyphicon-shopping-car"></span>Thêm vào giỏ hàng</button>
+            <a ng-href="/minisnacks/details/{{food.id}}" class="details btn pull-right">Chi tiết</a>
           </div>
           <div class="clearfix"> </div>
         </div>

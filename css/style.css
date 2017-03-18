@@ -458,6 +458,16 @@ a.details{
 	font-size:1.2em;
 	color:#fff;
 	background: #2e8e26;
+	padding: 0.4em 0.4em;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-o-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+}
+#bt1 {
+	text-decoration:none;
+	font-size:1.2em;
 	padding: 0.4em 0.8em;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;

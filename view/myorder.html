@@ -1,0 +1,25 @@
+<main class="container">
+	<section class="responsive">
+		<figure class="page-header">
+		  <h1 style="color:black">Lịch sử mua hàng</h1>
+		</figure>
+		<table class="table table-bordered table-striped table-hover responsive">
+			<thead>
+				<th>#</th>
+				<th>Mã Hóa Đơn</th>
+				<th>Ngày Tạo</th>
+				<th>Ngày Chỉnh Sửa</th>
+				<th>Tình Trạng</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat = "order in userOrder">
+					<td ng-bind="$index+1"></td>
+					<td ng-bind="order.id"></td>
+					<td ng-bind="order.created_date | date:'dd/MM/yyyy'"></td>
+					<td ng-bind="order.modifed_date | date:'dd/MM/yyyy'"></td>
+					<td id="status" ng-bind="order.status"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</main>
