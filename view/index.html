@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-3" ng-repeat="food in foods| filter:searchText">
         <div class="cup-in">
-          <a href="#"><img ng-src="{{food.imgSrc}}" class="img-responsive product-img" alt=""></a>
+          <a ng-href="/minisnacks/details/{{food.id}}"><img ng-src="{{food.imgSrc}}" class="img-responsive product-img" alt=""></a>
           <p>{{food.name}}</p>
           <span class="dollar">{{food.price | number}} VNĐ</span>
           <div class="details-in">
