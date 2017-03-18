@@ -18,18 +18,32 @@ angular.module("minisnacks-admin").controller('adminCategory', ['$scope', '$http
 		$scope.remove = function(id,name) {
 
 
-			var r = confirm("Bạn có chắn muốn xóa danh mục "+ name  +"");
-			if (r == true) {
-			    for(i = 0; i < $scope.categories.length; i++) {
+			swal({
+			  title: "Thông báo",
+			  text: "Bạn có chắn muốn xóa danh mục!",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Có!",
+			  cancelButtonText:"Không",
+			  closeOnConfirm: false
+			},
+			function(){
+			  swal({
+			  	title:"Thành công",
+			  	text: "Danh mục sản phẩm đã được xóa",
+			  	type: "success"},function(isConfirm){
+			  		if(isConfirm)
+			  			location.reload();
+			  	});
+			  	for(i = 0; i < $scope.categories.length; i++) {
 				if ( $scope.categories[i].id == id ) {
 					$scope.categories.splice(i, 1);
+					}
 				}
-			}
-			$http.delete("http://localhost:3000/categories/" + id).then();
-			} else {
-			    return;
-			}
-			reload();
+				$http.delete("http://localhost:3000/categories/" + id).then();
+
+			});
 			
 		};
 
@@ -67,8 +81,13 @@ angular.module("minisnacks-admin").controller('adminCategory', ['$scope', '$http
 			 	"data": obj
 			};
 			$http(req).then( function(response,$state) {
-				console.log(response);
-				alert('Đã thêm');	
+				swal({
+			  	title:"Thành công",
+			  	text: "Danh mục sản phẩm đã được thêm",
+			  	type: "success"},function(isConfirm){
+			  		if(isConfirm)
+			  			location.reload();
+			  	});
 				$scope.categoryAdd = "";
 				$scope.categories.reload();
 			});

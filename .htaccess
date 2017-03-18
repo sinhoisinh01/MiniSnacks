@@ -21,6 +21,9 @@ RewriteRule ^checkout/$ ./index.html?action=checkout
 RewriteRule ^shop$ http://%{HTTP_HOST}/minisnacks/shop/ [R=301,L]
 RewriteRule ^shop/$ ./index.html?action=shop
 
+# Detail
+RewriteRule ^shop/[\d+]$ ./index.html?action=shops&id=$1
+
 # Checkout
 RewriteRule ^cart$ http://%{HTTP_HOST}/minisnacks/cart/ [R=301,L]
 RewriteRule ^cart/$ ./index.html?action=cart
