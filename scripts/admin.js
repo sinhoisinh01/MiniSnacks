@@ -1,9 +1,9 @@
 var app = angular.module("minisnacks-admin", ["ngRoute"]);
 app.config(function($locationProvider,$routeProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.when("/", {
-      templateUrl : "admin.html",
-		    //controller: "IndexController"
+    $routeProvider.when("/admin", {
+      templateUrl : "view/admin/admin.html",
+		  controller: "AdminStatistic"
     }).when("/admin/product",{
       templateUrl : "view/product.html",
       controller  : "AdminFood"
@@ -17,6 +17,9 @@ app.config(function($locationProvider,$routeProvider) {
     }).when("/admin/orders",{
       templateUrl : "view/admin/admin_orders.html",
       controller: "AdminOrders"
+    }).when("/admin/orders/:id",{
+      templateUrl : "view/admin/admin_order_detail.html",
+      controller: "AdminOrderDetail"
     }).when("/admin/categories",{
       templateUrl : "view/admin/admin_category.html",
       controller :  "adminCategory"

@@ -132,12 +132,11 @@ angular.module("minisnacks")
 			}
 		};
 
-		$scope.AddToCart = function() {
-			if (foodId) {
-				$rootScope.currentUser.cart.items = [];
+		$scope.AddToCart = function(idFood) {
+			if (foodId || idFood) {
 				flat = 1;
 				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
-					if ($rootScope.currentUser.cart.items[i].id == foodId) {
+					if ($rootScope.currentUser.cart.items[i].id == foodId || $rootScope.currentUser.cart.items[i].id == idFood) {
 						$rootScope.currentUser.cart.items[i].quantity++;
 						flat = 0;
 						req = {
@@ -153,17 +152,36 @@ angular.module("minisnacks")
 					}
 				}
 				if (flat == 1) {
-					$scope.dish.quantity = 1;
-					$rootScope.currentUser.cart.items.push($scope.dish);
-					req = {
-					 "method":"PUT",
-					 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
-					 "headers": {
-					   "Content-Type": "application/json"
-					 },
-					 "data":$rootScope.currentUser
-					};
-					$http(req).then(function() {});
+					if (idFood) {
+						$scope.dish = {};
+						$http.get("http://localhost:3000/foods/" + idFood).then(function (response) {
+							$scope.dish = response.data;
+							$scope.dish.quantity = 1;
+							$rootScope.currentUser.cart.items.push($scope.dish);
+							req = {
+							 "method":"PUT",
+							 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+							 "headers": {
+							   "Content-Type": "application/json"
+							 },
+							 "data":$rootScope.currentUser
+							};
+							$http(req).then(function() {});
+						});
+					}
+					else {
+						$scope.dish.quantity = 1;
+						$rootScope.currentUser.cart.items.push($scope.dish);
+						req = {
+						 "method":"PUT",
+						 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+						 "headers": {
+						   "Content-Type": "application/json"
+						 },
+						 "data":$rootScope.currentUser
+						};
+						$http(req).then(function() {});
+					}
 				}
 				swal("Thông báo","Đã thêm vào giỏ hàng","success");
 			}	
