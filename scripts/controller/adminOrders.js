@@ -80,5 +80,4 @@ angular.module("minisnacks-admin").controller("AdminOrders", ['$scope', '$http',
 		jQuery(ele).attr("isChange",0);
 	}
 
-
 }]);
