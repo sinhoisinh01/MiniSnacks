@@ -1,0 +1,31 @@
+<div class="inner-wrapper">
+<div class="responsive">
+	<table class="table table-bordered table-stripped">
+		<thead>
+			<tr>
+				<th>STT</th>
+				<th>Họ</th>
+				<th>Tên</th>
+				<th>SĐT</th>
+				<th>Email</th>
+				<th>Địa chỉ</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="x in users | limitTo: 10">
+				<td>{{$index+1}}</td>
+				<td>{{x.lastname}}</td>
+				<td>{{x.firstname}}</td>
+				<td>{{x.telephone}}</td>
+				<td>{{x.email}}</td>
+				<td>{{x.address}}</td>
+				<td><a type="button" class="btn btn-warning" ng-click="resetPassword()">Reset Password</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+<!--
+ng-click="get(category.id)"
+ng-click="remove(category.id,category.category_name)"-->
