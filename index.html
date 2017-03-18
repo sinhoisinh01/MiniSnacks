@@ -38,14 +38,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="header-top-in">
 					<div class="act">
-						<a href="/minisnacks/about" class="done">Since 1900</a>
+						<a href="/minisnacks/about" class="done">Từ năm 1900</a>
 					</div>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="account">My Account</a> <label>/</label></li>
-					<li><a href="#">My Cart</a> <label>/</label></li>
-					<li><a href="/minisnacks/checkout">Checkout</a></li>
+					<li ng-if="!currentUserId"><a href="account">Đăng nhập / Đăng ký</a></li>
+					<li ng-if="currentUserId"><a href="/minisnacks/cart">Giỏ hàng</a> <label>/</label></li>
+					<li ng-if="currentUserId"><a href="/minisnacks/checkout">Thanh toán</a></li>
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -65,12 +65,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse js-navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class="">
-								<a href="/minisnacks/about">About</a></li>
+								<a href="/minisnacks/about">Về chúng tôi</a></li>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav">
 							<li class="dropdown mega-dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<span class="glyphicon glyphicon-chevron-down pull-right mns-icon"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Thực đơn<span class="glyphicon glyphicon-chevron-down pull-right mns-icon"></span></a>
 
 								<ul class="dropdown-menu mega-dropdown-menu row">
 									<li class="col-sm-3">
@@ -149,6 +149,7 @@ uspendisse venenatis dolor et nunc iaculis ege</p>
 	</div>
 <script src="js/angular.js"></script>
 <script src="js/angular.route.min.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/megamenu.js"></script>
 <script src="js/bootstrap.min.js"></script>

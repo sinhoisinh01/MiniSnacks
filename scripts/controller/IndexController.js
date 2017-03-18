@@ -1,8 +1,10 @@
 angular.module("minisnacks")
-	.controller('IndexController', ['$rootScope', '$scope', '$http', '$routeParams', '$location', function($rootScope, $scope, $http, $routeParams, $location) {
+	.controller('IndexController', ['$rootScope', '$scope', '$http', '$routeParams', '$location','$cookies', function($rootScope, $scope, $http, $routeParams, $location, $cookies) {
 		$scope.foods = [];
 		$scope.categories=[];
 		$scope.newComment = {};
+		$scope.newOrder = {};
+		$rootScope.currentUser = {};
 		
 		$http.get("http://localhost:3000/foods").then(function (response) {
 			$scope.foods = response.data;
@@ -12,6 +14,14 @@ angular.module("minisnacks")
 		$http.get("http://localhost:3000/categories").then(function (response) {
 			$scope.categories = response.data;
 
+		});
+
+		$scope.currentUserId = $cookies.get('currentUserId');
+		$http.get("http://localhost:3000/users/" + $scope.currentUserId)
+		.then(function(response) {
+			$rootScope.currentUser = response.data;
+			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+			initValuesForNewOrder();
 		});
 
 		foodId = $routeParams.foodId;
@@ -80,7 +90,8 @@ angular.module("minisnacks")
 					$http(req).then( function(response) {
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
-						window.location.href = "http://localhost/minisnacks/";
+						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
+						window.location.href = "/minisnacks";
 					});
 				});
 			}
@@ -96,7 +107,8 @@ angular.module("minisnacks")
 						if (response.data[i].email == $scope.email && response.data[i].password == $scope.password) {
 							$rootScope.currentUser = response.data[i];
 							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
-							window.location.href = "http://localhost/minisnacks/";
+							$cookies.put('currentUserId', $rootScope.currentUser.id);
+							window.location.href = "/minisnacks";
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -104,5 +116,111 @@ angular.module("minisnacks")
 					}
 				});
 			}
-		};		
+		};
+
+		$scope.AddToCart = function(idFood) {
+			if (foodId || idFood) {
+				flat = 1;
+				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
+					if ($rootScope.currentUser.cart.items[i].id == foodId || $rootScope.currentUser.cart.items[i].id == idFood) {
+						$rootScope.currentUser.cart.items[i].quantity++;
+						flat = 0;
+						req = {
+						 "method":"PUT",
+						 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+						 "headers": {
+						   "Content-Type": "application/json"
+						 },
+						 "data":$rootScope.currentUser
+						};
+						$http(req).then(function() {});
+						break;
+					}
+				}
+				if (flat == 1) {
+					if (idFood) {
+						$scope.dish = {};
+						$http.get("http://localhost:3000/foods/" + idFood).then(function (response) {
+							$scope.dish = response.data;
+							$scope.dish.quantity = 1;
+							$rootScope.currentUser.cart.items.push($scope.dish);
+							req = {
+							 "method":"PUT",
+							 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+							 "headers": {
+							   "Content-Type": "application/json"
+							 },
+							 "data":$rootScope.currentUser
+							};
+							$http(req).then(function() {});
+						});
+					}
+					else {
+						$scope.dish.quantity = 1;
+						$rootScope.currentUser.cart.items.push($scope.dish);
+						req = {
+						 "method":"PUT",
+						 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+						 "headers": {
+						   "Content-Type": "application/json"
+						 },
+						 "data":$rootScope.currentUser
+						};
+						$http(req).then(function() {});
+					}
+				}
+				console.log($rootScope.currentUser.cart);
+			}	
+		}
+
+		$scope.updateCart = function() {
+			$rootScope.currentUser.cart.total = calculateTotal($rootScope.currentUser.cart.items);
+			req = {
+			 "method":"PUT",
+			 "url": "http://localhost:3000/users/" + $rootScope.currentUser.id,
+			 "headers": {
+			   "Content-Type": "application/json"
+			 },
+			 "data":$rootScope.currentUser
+			};
+			$http(req).then(function() {});
+		}
+
+		function calculateTotal(items) {
+			total = 0;
+			for (var i = 0; i < items.length; i++) {
+				total += items[i].price * items[i].quantity;
+			}
+			return total;
+		}	
+
+		$scope.checkout = function() {
+			if ($scope.newOrder) {
+				$scope.newOrder.status = "Chưa giao hàng";
+				d = new Date();
+				$scope.newOrder.created_date = d.toString();
+				$scope.newOrder.modifed_date = d.toString();
+				req = {
+				 "method":"POST",
+				 "url": "http://localhost:3000/orders",
+				 "headers": {
+				   "Content-Type": "application/json"
+				 },
+				 "data": $scope.newOrder
+				};
+				$http(req).then(function(response) {
+					window.location.href = "/minisnacks";
+				});
+			}
+		};
+
+		function initValuesForNewOrder() {
+			$scope.newOrder.user_id = $cookies.get('currentUserId');
+			$scope.newOrder.products = $rootScope.currentUser.cart.items;
+			$scope.newOrder.firstname = $rootScope.currentUser.firstname;
+			$scope.newOrder.lastname = $rootScope.currentUser.lastname;
+			$scope.newOrder.phone = $rootScope.currentUser.telephone;
+			$scope.newOrder.email = $rootScope.currentUser.email;
+			$scope.newOrder.address = $rootScope.currentUser.address;
+		}
 	}]);

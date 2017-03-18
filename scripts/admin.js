@@ -17,5 +17,9 @@ app.config(function($locationProvider,$routeProvider) {
     }).when("/admin/orders",{
       templateUrl : "view/admin/admin_orders.html",
       controller: "AdminOrders"
+    }).when("/admin/categories",{
+      templateUrl : "view/admin/admin_category.html",
+      controller :  "adminCategory"
+    //goi o day thi khong can khai bao controller trong trang html
     });
 });
