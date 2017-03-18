@@ -14,10 +14,10 @@
 				<td ng-bind="order.created_date | date:'dd/MM/yyyy'"></td>
 				<td ng-bind="order.modifed_date | date:'dd/MM/yyyy'"></td>
 				<td id="status">
-				  <select class="form-control" id="sel1" ng-model="order.status">
+				  <select class="form-control"  onclick="keepValue(this)" ng-change="remove(order.id,'#status-{{order.id}}')" id="status-{{order.id}}" old-Value="" ng-model="order.status">
 			        <option>Chưa giao hàng</option>
 			        <option>Đã giao hàng</option>
-			        <option>Hủy</option>
+			        <option >Hủy</option>
 			      </select>
 			    </td>
 			</tr>
@@ -29,3 +29,8 @@
     	</ul>
 	</center>
 </div>
+<script>
+	function keepValue(ele){
+		$(ele).attr("old-Value",$(ele).val());
+	}
+</script>

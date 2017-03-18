@@ -27,28 +27,58 @@ angular.module("minisnacks-admin").controller("AdminOrders", ['$scope', '$http',
 		return $scope.total;
 	};*/
 
-	/*$scope.remove = function(id) {
-		for(i = 0; i < $scope.orders.length; i++)
+	$scope.remove = function(id,ele) {
+
+		if(jQuery(ele).val() === "Hủy")
 		{
-			if($scope.orders[i].id === id)
+
+			var index = -1;
+			for(i = 0; i < $scope.orders.length; i++)
 			{
-				if($scope.orders[i].status === "Đã giao hàng") 
+				if($scope.orders[i].id === id)
 				{
-					alert("Không được xóa hóa đơn " + id);
+					index = i;
+					break;
+				}
+			}
+			if(index > -1)
+			{
+				$scope.orders[index].status = jQuery(ele).attr("old-Value");
+				if(jQuery(ele).attr("old-Value") === "Đã giao hàng")
+				{
+					$scope.orders[index].status = jQuery(ele).attr("old-Value");
+					swal("Lỗi", "Không được xóa hóa đơn này !", "error");
 				}
 				else {
-					var txt;
-					var r = confirm("Bạn có chắc muốn xóa không!");
-				    if (r == true) {
-				        txt = "Xác nhận!";
-				    } else {
-				        txt = "Hủy!";
-				    }
-				}
+					swal({
+						  title:"Thông báo",
+						  text: "Bạn có chắc muốn hủy đơn hàng này ?",
+						  type: "warning",
+						  showCancelButton: true,
+						  confirmButtonColor: "#DD6B55",
+						  confirmButtonText: "Có",
+						  cancelButtonText:"Không",
+						  closeOnConfirm: false,
+					      closeOnCancel: false
+						},
+						function(isConfirm){
+							if(isConfirm)
+							{
+								$scope.orders[index].status = "Hủy";
+								swal("Thành Công", "Đơn hàng này đã được xóa!", "success");
 
+							}
+							else {
+								$scope.orders[index].status = "Chưa giao hàng";
+								jQuery(ele).attr("value","Chưa giao hàng");
+								swal("Hoàn tác", "", "success");
+							}
+						});
+				}
 			}
 		}
-	}*/
+		jQuery(ele).attr("isChange",0);
+	}
 
 
 }]);
