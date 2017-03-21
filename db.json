@@ -511,6 +511,215 @@
       "thumbnail": "images/banh_trang_nuong_thumbnail.jpg",
       "comments": [],
       "view": "10"
+    },
+  {
+      "id": 9,
+      "name": "Bánh Flan",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 5000,
+      "imgSrc": "images/banh_flan.jpg",
+      "thumbnail": "images/banh_flan.jpg",
+      "description": "Flan là loại bánh khá dễ làm tuy nhiên để có sản phẩm hoàn hảo, mặt bánh không bị rỗ, hỗn hợp đông nhưng không quá đặc, vẫn cảm nhận rõ sự mềm mịn núng nính khi xắn từng miếng bánh",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 10,
+      "name": "Phô mai chiên",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 10000,
+      "imgSrc": "images/pho_mai.jpeg",
+      "thumbnail": "images/pho_mai.jpeg",
+      "description": "Phô mai chiên xù là món ăn vặt cực hợp lí khi tiết trời se lạnh. Từng miếng phô mai nóng hổi giòn rụm bên ngoài, dai béo bên trong chấm kèm chút tương ớt cay cay hoặc sốt mayonnaise béo ngậy thì chẳng còn gì bằng.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 11,
+      "name": "Bánh Nếp",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 25000,
+      "imgSrc": "images/banh_nep.jpg",
+      "thumbnail": "images/banh_nep.jpg",
+      "description": "Bánh nếp bí đỏ là một món bánh ăn nhẹ rất tốt cho sức khỏe, bí đỏ không chỉ ngon mà còn giàu chất dinh dưỡng lành mạnh như các vitamin, chất kẽm được xem là nguyên tố quan trọng cho sự tăng trưởng và phát triển của trẻ nhỏ.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 12,
+      "name": "Bún cá",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 35000,
+      "imgSrc": "images/bun_ca.jpg",
+      "thumbnail": "images/bun_ca.jpg",
+      "description": "Một tô bún nước trong veo, nổi bật với những lát chả cá chiên, hấp và những miếng cá tươi điểm thêm cà chua, vài cọng hành xanh mơn, mới nhìn qua đã ừng ực thành tiếng. Ngoài ra bạn có thể gọi thêm cá dầm, sứa để bát bún thêm đầy đặn, ngon lành.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 13,
+      "name": "Sò Ngọt Nướng Mỡ Hành",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 5000,
+      "imgSrc": "images/so_ngot.jpg",
+      "thumbnail": "images/so_ngot.jpg",
+      "description": "Sò dương nướng mỡ hành có vị dai ngọt, đậm đà quyện với mùi thơm của hành sẽ là món ngon cho cả gia đình bạn khám phá trong dịp nghỉ lễ này!",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 14,
+      "name": "Bánh Canh",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 25000,
+      "imgSrc": "images/banh_canh.jpg",
+      "thumbnail": "images/banh_canh.jpg",
+      "description": "Bánh canh Nha Trang ngon đặc biệt nhờ nước dùng được nấu từ các loại cá biển nên ngọt đậm đà, chả cá cũng được quết từ cá tươi nên dai mịn, mềm và ngọt vị cá.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 15,
+      "name": "Nem Nướng",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 35000,
+      "imgSrc": "images/nem_nuong.jpg",
+      "thumbnail": "images/nem_nuong.jpg",
+      "description": "Nem nướng thực ra có xuất xứ từ Ninh Hòa nhưng ngày nay nó đã trở thành món ăn mà bất kì khách du lịch nào cũng hào hứng muốn được khám phá ở Nha Trang. Nguyên liệu cho một phần nem nướng khá cầu kỳ, bao gồm thịt băm lụi, bánh tráng chiên giòn cùng các loại rau ăn kèm.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 16,
+      "name": "Bánh Căn",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 25000,
+      "imgSrc": "images/banh_cang.jpg",
+      "thumbnail": "images/banh_cang.jpg",
+      "description": "Nếu đã từng được ăn bánh căn, bánh xèo tôm, mực ở Nha Trang, bạn sẽ thấy bánh căn hải sản ở những nơi khác, dù thế nào cũng khó lòng bì kịp. Có lẽ bởi phổ biến sẵn hải sản tươi nên miếng bánh ở đây mới ngon đến thế. ",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 17,
+      "name": "Bánh Nếp Tẩm Dừa",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 15000,
+      "imgSrc": "images/banh_nep_tam_dua.jpg",
+      "thumbnail": "images/banh_nep_tam_dua.jpg",
+      "description": "Chỉ với vài bước đơn giản bạn đã có món bánh nếp tẩm dừa 2 màu hấp dẫn đãi cả nhà rồi. Viên bánh nhỏ xinh, dẻo mềm, thơm bùi lớp dừa nạo bền ngoài và đậm đà lớp nhân đậu đỏ bên trong chắc chắn sẽ khiến bất kỳ ai khó lòng chối từ, ngay cả với đấng mày râu vốn ít mặn mà với bánh trái.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+{
+      "id": 18,
+      "name": "Khoai Lang Nướng Kiểu Tây",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 15000,
+      "imgSrc": "images/khoai_lang.jpg",
+      "thumbnail": "images/khoai_lang.jpg",
+      "description": "Khoai lang nướng vốn là món ăn vặt quen thuộc của mỗi nhà. Giờ đây bạn có thể nâng tầm món ăn này lên một cấp độ mới với cách làm khá lạ miệng và hấp dẫn này. Khoai thơm phức, béo bùi vị phô mai kết hợp với rau mùi hấp dẫn cực kỳ.",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
+    },
+  {
+      "id": 19,
+      "name": "Chè Khoai Lang",
+      "category": {
+        "id": 2,
+        "category_name": "Món chính"
+      },
+      "price": 15000,
+      "imgSrc": "images/che_khoai_lang.jpg",
+      "thumbnail": "images/che_khoai_lang.jpg",
+      "description": "Chè khoai lang táo đỏ là một món chè bổ dưỡng rất thích hợp làm món tráng miệng sau bữa tối hay món ăn vặt lúc xế chiều. Món chè có vị ngọt vừa phải, từng miếng khoai bở mềm ngọt thơm và đặc biệt lại chế biến khá nhanh, đáng để bạn thử lắm đấy!",
+      "comments": [
+        {
+          "author": "Sinh",
+          "content": "Ngon lam ne"
+        }
+      ],
+      "view": "2"
     }
   ]
 }
