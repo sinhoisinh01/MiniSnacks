@@ -78,7 +78,7 @@ angular.module("minisnacks")
 				 "data":$scope.dish
 				};
 				$http(req).then( function(response) {
-					console.log(response);	
+					swal("Bạn đã bình luận cho sản phẩm này","","success");
 				});
 			}
 		};

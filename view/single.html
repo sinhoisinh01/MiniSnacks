@@ -27,16 +27,16 @@
 					 </ul>
 				<div class="comments-area">
 						<h3>Thêm Lời Bình</h3>
-						<form>
+						<form style="background:white;padding:15px">
 							<p>
 								<label>Tên</label>
 								
-								<input type="text" value="" ng-model="newComment.author">
+								<input type="text" value="" ng-model="newComment.author" required>
 							</p>
 							<p>
 								<label>Email</label>
 								
-								<input type="text" value="">
+								<input type="text" value="" required>
 							</p>
 							<p>
 								<label>Website</label>
@@ -45,10 +45,10 @@
 							<p>
 								<label>Miêu tả</label>
 								
-								<textarea ng-model="newComment.content"></textarea>
+								<textarea ng-model="newComment.content" required></textarea>
 							</p>
 							<div class="sub-in">
-								<input type="button" class="btn btn-warning" value="Xác nhận lời bình" ng-click="AddNewComment()">
+								<input type="submit" class="btn btn-warning" value="Bình luận" ng-click="AddNewComment()">
 							</div>
 						</form>
 				  </div>
