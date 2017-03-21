@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <html>
 <head>
-<title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>MiniSnacks</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="google-signin-client_id" content="36451467157-p3td54q5t98af9opiqaarj7e2iaqnepq.apps.googleusercontent.com">
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li ng-if="!currentUserId"><a href="account">Đăng nhập / Đăng ký</a></li>
 					<li ng-if="currentUserId"><a href="/minisnacks/cart">Giỏ hàng</a> <label>/</label></li>
 					<li ng-if="currentUserId && currentUser.cart.items.length > 0"><a href="/minisnacks/checkout">Thanh toán</a><label>/</label></li>
-					<li ng-if="currentUserId"><a href="#">Đăng xuất</a></li>
+					<li ng-if="currentUserId" style="cursor:pointer;"><a ng-click="signout()">Đăng xuất</a></li>
 				</ul>
 				<div class="clearfix"> </div>
 			</div>

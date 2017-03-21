@@ -105,7 +105,14 @@ angular.module("minisnacks")
 						$rootScope.currentUser = response.data[i];
 						console.log($rootScope.currentUser);
 						$cookies.putObject('currentUserId', $rootScope.currentUser.id);
-						window.location.href = "/minisnacks";
+						swal({
+							  title: "Chào " + $rootScope.currentUser.firstname + "!!!",
+							  text: "Bạn đã đăng ký thành công!!!",
+							  timer: 1000,
+							  showConfirmButton: false
+							},function(){
+								window.location.href = "/minisnacks";
+							});
 					});
 				});
 			}
@@ -120,9 +127,16 @@ angular.module("minisnacks")
 					for (i = 0; i < response.data.length; i++) {
 						if (response.data[i].email == $scope.email && response.data[i].password == $scope.password) {
 							$rootScope.currentUser = response.data[i];
-							alert("Chào " + $rootScope.currentUser.firstname + "!!! Bạn đã đăng nhập thành công!!!");
 							$cookies.put('currentUserId', $rootScope.currentUser.id);
-							window.location.href = "/minisnacks";
+							swal({
+							  title: "Chào " + $rootScope.currentUser.firstname + "!!!",
+							  text: "Bạn đã đăng nhập thành công!!!",
+							  timer: 1000,
+							  showConfirmButton: false
+							},function(){
+								window.location.href = "/minisnacks";
+							});
+							
 						}
 						else {
 							alert("Sai Email hoặc mật khẩu");
@@ -133,6 +147,17 @@ angular.module("minisnacks")
 		};
 
 		$scope.AddToCart = function(idFood) {
+			if (!$scope.currentUserId) {
+				swal({
+				  title: "Bạn chưa đăng nhập",
+				  text: "Cần đăng nhập để thực hiện chức năng này",
+				  timer: 1000,
+				  showConfirmButton: false
+				},function(){
+					window.location.href = "/minisnacks/account";
+					return;
+				});
+			}
 			if (foodId || idFood) {
 				flat = 1;
 				for (var i = 0; i < $rootScope.currentUser.cart.items.length; i++) {
@@ -253,6 +278,13 @@ angular.module("minisnacks")
 					});
 				});
 			}
+		};
+
+		$scope.signout = function() {
+			$scope.currentUserId = null;
+			$cookies.remove('currentUserId');
+			$rootScope.currentUser = null;
+			window.location.href = "/minisnacks";
 		};
 
 		function initValuesForNewOrder() {
